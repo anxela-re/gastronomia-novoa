@@ -6036,7 +6036,7 @@ var module_Splide = /*#__PURE__*/function (_Core) {
 
 var _aos = _interopRequireDefault(require("./node_modules/aos"));
 
-var _splide = _interopRequireDefault(require("@splidejs/splide"));
+var _splide = _interopRequireDefault(require("./node_modules/@splidejs/splide"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6122,7 +6122,7 @@ if (document.querySelector(".splide")) {
     gap: "1rem"
   }).mount();
 }
-},{"./node_modules/aos":"node_modules/aos/dist/aos.js","@splidejs/splide":"node_modules/@splidejs/splide/dist/js/splide.esm.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./node_modules/aos":"node_modules/aos/dist/aos.js","./node_modules/@splidejs/splide":"node_modules/@splidejs/splide/dist/js/splide.esm.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -6150,7 +6150,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54887" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54596" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
