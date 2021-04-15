@@ -2,7 +2,7 @@
   "name": "pec1-html-css",
   "version": "1.0.0",
   "description": "pec1 html y css",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm-run-all clean parcel:dev",
@@ -13,7 +13,6 @@
   },
   "author": "Anxela Redondo",
   "license": "ISC",
-  "homepage": "https://anxela-re.github.io/gastronomia-novoa",
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "npm-run-all": "^4.1.5",
@@ -24,5 +23,6 @@
     "@splidejs/splide": "^2.4.21",
     "aos": "^2.3.4",
     "css-ui-table": "^1.0.8"
-  }
+  },
+  "homepage": "https://anxela-re.github.io/gastronomia-novoa/index.html"
 }
