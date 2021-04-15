@@ -288,6 +288,26 @@
     </footer>
 <script src="../index.js" type="module"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+
+  if (document.querySelector(".splide")) {
+    new Splide(".splide", {
+      type: "loop",
+      perPage: Math.floor(document.querySelector("body").clientWidth / 350),
+      height: "9rem",
+      cover: true,
+      breakpoins: {
+        640: {
+          height: "6rem",
+        },
+      },
+      gap: "1rem",
+    }).mount();
+  }
+</script>
 </body>
 
 </html>

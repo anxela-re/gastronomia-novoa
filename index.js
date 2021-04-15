@@ -1,7 +1,5 @@
-import AOS from "./node_modules/aos";
-import Splide from "./node_modules/@splidejs/splide";
+// import Splide from "./node_modules/@splidejs/splide";
 
-AOS.init();
 
 let offsetMarList, countMarList, offsetTierraList, countTierraList;
 const marList = document.querySelector("#mar-category-list");
@@ -65,17 +63,17 @@ if (seeMoreTierraBtn) {
   });
 }
 
-if (document.querySelector(".splide")) {
-  new Splide(".splide", {
-    type: "loop",
-    perPage: Math.floor(document.querySelector("body").clientWidth / 350),
-    height: "9rem",
-    cover: true,
-    breakpoins: {
-      640: {
-        height: "6rem",
-      },
-    },
-    gap: "1rem",
-  }).mount();
-}
+// if (document.querySelector(".splide")) {
+//   new Splide(".splide", {
+//     type: "loop",
+//     perPage: Math.floor(document.querySelector("body").clientWidth / 350),
+//     height: "9rem",
+//     cover: true,
+//     breakpoins: {
+//       640: {
+//         height: "6rem",
+//       },
+//     },
+//     gap: "1rem",
+//   }).mount();
+// }
