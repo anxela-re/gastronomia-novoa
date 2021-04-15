@@ -1,5 +1,5 @@
 import AOS from "./node_modules/aos";
-import Splide from "../node_modules/splidejs/splide";
+import Splide from "./node_modules/splidejs/splide";
 
 AOS.init();
 
