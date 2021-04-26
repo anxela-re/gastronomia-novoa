@@ -423,6 +423,7 @@ input.search {
     display: block;
     object-fit: cover;
     width: 100%;
+    max-width: 500px;
   }
   .category p {
     font-size: 2.5rem;
