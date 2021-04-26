@@ -79,3 +79,30 @@ if (document.querySelector(".splide")) {
     gap: "1rem",
   }).mount();
 }
+
+let logos = document.getElementsByClassName("logo");
+// if(logos.length) {
+//   for( let logo of logos) {
+//     console.log(logo)
+//   }
+// }
+function checkPosition() {
+  if (logos.length) {
+    for (let logo of logos) {
+      let positionFromTop = logo.getBoundingClientRect().top;
+      console.log(positionFromTop - window.innerHeight <= 0);
+      if (positionFromTop - window.innerHeight <= 0) {
+        logo.classList.add("logo-animation");
+      } else {
+        logo.classList.remove("logo-animation");
+        logo.classList.add("init-logo")
+        console.log(logo.classList)
+      }
+    }
+  }
+}
+window.addEventListener("scroll", checkPosition);
+function init() {
+  checkPosition();
+}
+init();

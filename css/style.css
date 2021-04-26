@@ -60,12 +60,12 @@ header {
   min-height: 4rem;
 }
 header h1 {
-  padding-left: 2rem;
+  padding-left: 1rem;
   margin: 0;
   color: #fff;
 }
 header > a {
-  width: calc(100% - 4rem);
+  /* width: calc(100% - 4rem); */
   margin: 1rem 0;
 }
 nav {
@@ -156,7 +156,47 @@ nav input[type="checkbox"]:checked + a::after {
     flex-direction: row;
   }
   header > a {
-    width: 35%;
+    /* width: 35%; */
+  }
+}
+/* PEC2 */
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+header > a {
+  display: flex;
+  flex-direction: row;
+}
+header svg {
+  margin-left: 1rem;
+}
+svg.init-logo polyline{
+  stroke-dashoffset: 300;
+  stroke-dasharray: 300;
+}
+svg.init-logo line{
+  stroke-dashoffset: 300;
+  stroke-dasharray: 300;
+}
+svg.logo-animation polyline {
+  stroke-dashoffset: 300;
+  stroke-dasharray: 300;
+  animation: stroke-in 5s forwards;
+}
+svg.logo-animation line {
+  stroke-dashoffset: 300;
+  stroke-dasharray: 300;
+  animation: stroke-in 5s forwards;
+  animation-delay: 1.5s;
+}
+footer svg.logo {
+  width: 100%;
+}
+@keyframes stroke-in {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 

@@ -6040,6 +6040,12 @@ var _splide = _interopRequireDefault(require("./node_modules/@splidejs/splide"))
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 _aos.default.init();
 
 var offsetMarList, countMarList, offsetTierraList, countTierraList;
@@ -6122,6 +6128,47 @@ if (document.querySelector(".splide")) {
     gap: "1rem"
   }).mount();
 }
+
+var logos = document.getElementsByClassName("logo"); // if(logos.length) {
+//   for( let logo of logos) {
+//     console.log(logo)
+//   }
+// }
+
+function checkPosition() {
+  if (logos.length) {
+    var _iterator = _createForOfIteratorHelper(logos),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var logo = _step.value;
+        var positionFromTop = logo.getBoundingClientRect().top;
+        console.log(positionFromTop - window.innerHeight <= 0);
+
+        if (positionFromTop - window.innerHeight <= 0) {
+          logo.classList.add("logo-animation");
+        } else {
+          logo.classList.remove("logo-animation");
+          logo.classList.add("init-logo");
+          console.log(logo.classList);
+        }
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+  }
+}
+
+window.addEventListener("scroll", checkPosition);
+
+function init() {
+  checkPosition();
+}
+
+init();
 },{"./node_modules/aos":"node_modules/aos/dist/aos.js","./node_modules/@splidejs/splide":"node_modules/@splidejs/splide/dist/js/splide.esm.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
