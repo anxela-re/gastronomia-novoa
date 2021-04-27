@@ -80,23 +80,28 @@ if (document.querySelector(".splide")) {
   }).mount();
 }
 
-let logos = document.getElementsByClassName("logo");
-// if(logos.length) {
-//   for( let logo of logos) {
-//     console.log(logo)
-//   }
-// }
 function checkPosition() {
+  let logos = document.getElementsByClassName("logo");
   if (logos.length) {
     for (let logo of logos) {
       let positionFromTop = logo.getBoundingClientRect().top;
-      console.log(positionFromTop - window.innerHeight <= 0);
       if (positionFromTop - window.innerHeight <= 0) {
         logo.classList.add("logo-animation");
+        logo.classList.remove("logo-init");
       } else {
         logo.classList.remove("logo-animation");
-        logo.classList.add("init-logo")
-        console.log(logo.classList)
+        logo.classList.add("logo-init");
+      }
+    }
+  }
+  let categorias = document.getElementsByClassName("categoria");
+  if (categorias.length) {
+    for (let cat of categorias) {
+      let positionFromTop = cat.getBoundingClientRect().top;
+      if (positionFromTop - window.innerHeight <= 0) {
+        cat.classList.add("categoria-animation");
+      } else {
+        cat.classList.remove("categoria-animation");
       }
     }
   }

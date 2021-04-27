@@ -173,27 +173,19 @@ header > a {
 header svg {
   margin-left: 1rem;
 }
-svg.init-logo polyline{
-  stroke-dashoffset: 300;
-  stroke-dasharray: 300;
-}
-svg.init-logo line{
-  stroke-dashoffset: 300;
-  stroke-dasharray: 300;
-}
-svg.logo-animation polyline {
+svg.logo polyline {
   stroke-dashoffset: 300;
   stroke-dasharray: 300;
   -webkit-animation: stroke-in 5s forwards;
           animation: stroke-in 5s forwards;
 }
-svg.logo-animation line {
+svg.logo line {
   stroke-dashoffset: 300;
   stroke-dasharray: 300;
   -webkit-animation: stroke-in 5s forwards;
           animation: stroke-in 5s forwards;
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 footer svg.logo {
   width: 100%;
@@ -206,6 +198,32 @@ footer svg.logo {
 @keyframes stroke-in {
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+svg.categoria-animation g#field g {
+  fill-opacity: 0;
+  stroke-opacity: 0;
+  -webkit-animation: fill-opacity 5s forwards;
+          animation: fill-opacity 5s forwards;
+}
+
+svg.categoria-animation path {
+  stroke-dashoffset: 300;
+  stroke-dasharray: 300;
+  -webkit-animation: stroke-in 5s forwards;
+          animation: stroke-in 5s forwards;
+}
+@-webkit-keyframes fill-opacity {
+  to {
+    stroke-opacity: 0.5;
+    fill-opacity: 0.7;
+  }
+}
+@keyframes fill-opacity {
+  to {
+    stroke-opacity: 0.5;
+    fill-opacity: 0.7;
   }
 }
 
