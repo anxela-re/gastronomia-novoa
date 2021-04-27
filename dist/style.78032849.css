@@ -176,16 +176,18 @@ header svg {
 svg.logo polyline {
   stroke-dashoffset: 300;
   stroke-dasharray: 300;
-  -webkit-animation: stroke-in 5s forwards;
-          animation: stroke-in 5s forwards;
+  /* animation: stroke-in 5s forwards; */
 }
 svg.logo line {
   stroke-dashoffset: 300;
   stroke-dasharray: 300;
-  -webkit-animation: stroke-in 5s forwards;
-          animation: stroke-in 5s forwards;
+  /* animation: stroke-in 5s forwards; */
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
+}
+.logo-animation line, .logo-animation polyline {
+  -webkit-animation: stroke-in 5s forwards;
+          animation: stroke-in 5s forwards;
 }
 footer svg.logo {
   width: 100%;

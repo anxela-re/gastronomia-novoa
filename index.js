@@ -81,23 +81,22 @@ if (document.querySelector(".splide")) {
 }
 
 function checkPosition() {
+  let positionFromTop;
   let logos = document.getElementsByClassName("logo");
   if (logos.length) {
     for (let logo of logos) {
-      let positionFromTop = logo.getBoundingClientRect().top;
+      positionFromTop = logo.getBoundingClientRect().top;
       if (positionFromTop - window.innerHeight <= 0) {
         logo.classList.add("logo-animation");
-        logo.classList.remove("logo-init");
       } else {
         logo.classList.remove("logo-animation");
-        logo.classList.add("logo-init");
       }
     }
   }
   let categorias = document.getElementsByClassName("categoria");
   if (categorias.length) {
     for (let cat of categorias) {
-      let positionFromTop = cat.getBoundingClientRect().top;
+      positionFromTop = cat.getBoundingClientRect().top;
       if (positionFromTop - window.innerHeight <= 0) {
         cat.classList.add("categoria-animation");
       } else {

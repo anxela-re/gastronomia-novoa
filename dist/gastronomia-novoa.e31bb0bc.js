@@ -6130,6 +6130,7 @@ if (document.querySelector(".splide")) {
 }
 
 function checkPosition() {
+  var positionFromTop;
   var logos = document.getElementsByClassName("logo");
 
   if (logos.length) {
@@ -6139,14 +6140,12 @@ function checkPosition() {
     try {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
         var logo = _step.value;
-        var positionFromTop = logo.getBoundingClientRect().top;
+        positionFromTop = logo.getBoundingClientRect().top;
 
         if (positionFromTop - window.innerHeight <= 0) {
           logo.classList.add("logo-animation");
-          logo.classList.remove("logo-init");
         } else {
           logo.classList.remove("logo-animation");
-          logo.classList.add("logo-init");
         }
       }
     } catch (err) {
@@ -6165,9 +6164,9 @@ function checkPosition() {
     try {
       for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
         var cat = _step2.value;
-        var _positionFromTop = cat.getBoundingClientRect().top;
+        positionFromTop = cat.getBoundingClientRect().top;
 
-        if (_positionFromTop - window.innerHeight <= 0) {
+        if (positionFromTop - window.innerHeight <= 0) {
           cat.classList.add("categoria-animation");
         } else {
           cat.classList.remove("categoria-animation");
@@ -6216,7 +6215,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55794" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65060" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
