@@ -6046,6 +6046,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+// jQuery(function () {
 _aos.default.init();
 
 var offsetMarList, countMarList, offsetTierraList, countTierraList;
@@ -6184,10 +6185,18 @@ function checkPosition() {
 window.addEventListener("scroll", checkPosition);
 
 function init() {
-  checkPosition();
+  checkPosition(); // console.log(document.getElementById("header"));
+  // document.getElementById("header").src = "./layouts/navBar.html";
 }
 
-init();
+init(); // $("#header").load("./layouts/navBar.html");
+// $("#main").load("./pages/references2.html");
+// $("#footer").load("./layouts/footer.html")
+// });
+// $(function () {
+//   console.log("$header");
+//   $("#header").append("navBar.html");
+// });
 },{"./node_modules/aos":"node_modules/aos/dist/aos.js","./node_modules/@splidejs/splide":"node_modules/@splidejs/splide/dist/js/splide.esm.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -6216,7 +6225,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55794" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57662" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -15,21 +15,7 @@
 </head>
 
 <body>
-  <header>
-    <a href="/index.html">
-      <h1>Gastronomía Novoa</h1>
-    </a>
-    <nav>
-      <input type="checkbox" id="menu-mobile">
-      <a onclick="document.getElementById('menu-mobile').checked = !document.getElementById('menu-mobile').checked">
-      </a>
-      <ul>
-        <li><a href="/pages\category-mar.html">Protege el mar</a></li>
-        <li><a href="/pages\category-tierra.html">Cuida la tierra</a></li>
-        <li class="selected"><a href="/pages\conocenos.html">Conócenos</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header id="header"></header>
   <main class="container conocenos">
     <div class="stretch-container">
       <ul class="breadcrumb">
@@ -110,63 +96,10 @@
     </div>
   </main>
 
-  <footer>
-    <div id="contacto">
-      <h2>Contacta con nosotras</h2>
-      <p>
-        Conoce más nuestras gastronomía y forma parte de ella, contacta con
-        nosotras si te gustaría participar en este nueva forma de ver tu
-        comida.
-      </p>
-    </div>
-    <div>
-      <ul>
-        <li>
-          <a href=""><i class="fa fa-2x fab fa-facebook underline"></i></a>
-        </li>
-        <li>
-          <a href=""><i class="fa fa-2x fab fa-twitter underline"></i></a>
-        </li>
-        <li>
-          <a href=""><i class="fa fa-2x fa-instagram underline"></i></a>
-        </li>
-        <li>
-          <a href=""><i class="fa fa-2x fa-pinterest underline"></i></a>
-        </li>
-        <li>
-          <a href=""><i class="fa fa-2x fa-youtube underline"></i></a>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <form>
-        <div>
-          <label for="name">Nombre</label>
-          <input type="text" id="name" placeholder="Nombre" required="">
-        </div>
-        <div>
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" placeholder="Correo electrónico" required="">
-        </div>
-        <div>
-          <label for="mensaje">Mensaje</label>
-          <textarea placeholder="Escriba aquí su mensaje" name="mensaje" id="mensaje" cols="30" rows="10" required=""></textarea>
-        </div>
-        <div>
-          <input type="checkbox" id="accept" name="accept" value="accept" required="">
-          <label for="accept">He leído y acepto la política de privacidad</label>
-        </div>
-        <input type="submit" value="Enviar">
-      </form>
-    </div>
-    <div class="copyrigth">
-      <p>
-        2021 &copy; Diseñado y realizado por Anxela Redondo. Consultar
-        <a href="/pages\references.html">fuentes del contenido</a>
-      </p>
-    </div>
-  </footer>
+  <footer id="footer"></footer>
   <script src="/gastronomia-novoa.e31bb0bc.js" type="module"></script>
+  <script src="/navbar.27cb530f.js"></script>
+  <script src="/footer.c71fe17e.js"></script>
 </body>
 
 </html>
