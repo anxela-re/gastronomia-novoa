@@ -1,6 +1,6 @@
-window.addEventListener("load", () => {
+export function createNavbar() {
   let enlace = document.createElement("a");
-  enlace.href = "../index.html";
+  enlace.href = "index.html";
 
   let svgLogo = document.createElement("div");
   svgLogo.innerHTML = createSVG();
@@ -15,20 +15,15 @@ window.addEventListener("load", () => {
   input.id = "menu-mobile";
   let enlaceMenu = document.createElement("a");
   enlaceMenu.onclick = () => {
-    document.querySelector("#menu-mobile").checked = !document.querySelector(
-      "#menu-mobile"
-    ).checked;
+    document.querySelector("#menu-mobile").checked =
+      !document.querySelector("#menu-mobile").checked;
   };
 
   let lista = document.createElement("ul");
 
-  lista.appendChild(
-    createItemList("./pages/category-mar.html", "Protege el mar")
-  );
-  lista.appendChild(
-    createItemList("./pages/category-tierra.html", "Cuida la tierra")
-  );
-  lista.appendChild(createItemList("./pages/conocenos.html", "Conócenos"));
+  lista.appendChild(createItemList("category-mar.html", "Protege el mar"));
+  lista.appendChild(createItemList("category-tierra.html", "Cuida la tierra"));
+  lista.appendChild(createItemList("conocenos.html", "Conócenos"));
 
   enlace.append(svgLogo);
   enlace.append(pageTitle);
@@ -39,8 +34,7 @@ window.addEventListener("load", () => {
 
   document.getElementById("header").append(enlace);
   document.getElementById("header").append(nav);
-});
-
+}
 function createItemList(ref, name) {
   let item = document.createElement("li");
   let enlace = document.createElement("a");

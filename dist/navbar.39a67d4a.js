@@ -117,122 +117,55 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"layouts/footer.js":[function(require,module,exports) {
-window.addEventListener("load", function () {
-  var footer = document.getElementById("footer");
-  footer.appendChild(createContactoContainer());
-  footer.appendChild(createSocialMenu());
-  footer.appendChild(formContainer());
-  footer.appendChild(copyrightContainer());
+})({"navbar.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
+exports.createNavbar = createNavbar;
 
-function copyrightContainer() {
-  var containerCopyright = document.createElement("div");
-  containerCopyright.classList.add("copyrigth");
-  var par = document.createElement("p");
-  par.innerHTML = "2021 &copy; Dise\xF1ado y realizado por Anxela Redondo. Consultar ";
-  var enlaceReferences = document.createElement("a");
-  enlaceReferences.textContent = "fuentes del contenido";
-  enlaceReferences.href = "../pages/references.html";
-  par.appendChild(enlaceReferences);
-  containerCopyright.appendChild(par);
-  return containerCopyright;
-}
-
-function formContainer() {
-  var containerForm = document.createElement("div");
-  var form = document.createElement("form");
-  form.appendChild(insertFormGroup("name", "Nombre", "text", "Nombre", true));
-  form.appendChild(insertFormGroup("email", "Correo electrónico", "email", "Correo electrónico", true));
-  form.appendChild(insertFormGroup("mensaje", "Mensaje", "textarea", "Escriba aquí su mensaje", true));
-  form.appendChild(insertFormGroup("accept", "He leído y acepto la política de privacidad", "checkbox", "", true));
-  var buttonSubmit = document.createElement("input");
-  buttonSubmit.type = "submit";
-  buttonSubmit.value = "Enviar";
-  form.appendChild(buttonSubmit);
-  containerForm.appendChild(form);
-  return containerForm;
-}
-
-function insertFormGroup(id, label, inputType, placeholder, required) {
-  var containerFormGourp = document.createElement("div");
-  var labelEl = document.createElement("label");
-  labelEl.for = id;
-  labelEl.textContent = label;
-
-  if (inputType === "textarea") {
-    var textarea = document.createElement("textarea");
-    textarea.placeholder = placeholder;
-    textarea.required = required;
-    textarea.name = id;
-    textarea.id = id;
-    textarea.cols = 30;
-    textarea.rows = 10;
-    containerFormGourp.appendChild(labelEl);
-    containerFormGourp.appendChild(textarea);
-  } else {
-    var input = document.createElement("input");
-    input.type = inputType;
-    input.id = id;
-    input.required = required;
-
-    if (inputType === "checkbox") {
-      input.value = id;
-      input.name = id;
-      containerFormGourp.appendChild(input);
-      containerFormGourp.appendChild(labelEl);
-    } else {
-      input.placeholder = placeholder;
-      containerFormGourp.appendChild(labelEl);
-      containerFormGourp.appendChild(input);
-    }
-  }
-
-  return containerFormGourp;
-}
-
-function createSocialMenu() {
-  var item, enlace, icon;
-  var containerSocial = document.createElement("div");
-  var list = document.createElement("ul");
-  var items = ["facebook", "twitter", "instagram", "pinterest", "youtube"];
-  items.forEach(function (i) {
-    item = document.createElement("li");
-    enlace = document.createElement("a");
-    icon = document.createElement("i");
-    var classes = ["fa", "fa-2x", "fab", "fa-".concat(i), "underline"];
-    classes.map(function (classItem) {
-      return icon.classList.add(classItem);
-    });
-    enlace.appendChild(icon);
-    item.appendChild(enlace);
-    list.appendChild(item);
-  });
-  containerSocial.appendChild(list);
-  return containerSocial;
-}
-
-function createContactoContainer() {
-  var containerContacto = document.createElement("div");
-  containerContacto.id = "contacto";
-  var titulo = document.createElement("h2");
-  titulo.textContent = "Contacta con nosotras";
-  var paragraph = document.createElement("p");
-  paragraph.textContent = "Conoce m\xE1s nuestras gastronom\xEDa y forma parte de ella, contacta con\n    nosotras si te gustar\xEDa participar en este nueva forma de ver tu\n    comida.";
+function createNavbar() {
+  var enlace = document.createElement("a");
+  enlace.href = "index.html";
   var svgLogo = document.createElement("div");
   svgLogo.innerHTML = createSVG();
-  containerContacto.appendChild(titulo);
-  containerContacto.appendChild(paragraph);
-  containerContacto.appendChild(svgLogo);
-  return containerContacto;
+  var pageTitle = document.createElement("h1");
+  pageTitle.textContent = "Gastornomia Novoa";
+  var nav = document.createElement("nav");
+  var input = document.createElement("input");
+  input.type = "checkbox";
+  input.id = "menu-mobile";
+  var enlaceMenu = document.createElement("a");
+
+  enlaceMenu.onclick = function () {
+    document.querySelector("#menu-mobile").checked = !document.querySelector("#menu-mobile").checked;
+  };
+
+  var lista = document.createElement("ul");
+  lista.appendChild(createItemList("category-mar.html", "Protege el mar"));
+  lista.appendChild(createItemList("category-tierra.html", "Cuida la tierra"));
+  lista.appendChild(createItemList("conocenos.html", "Conócenos"));
+  enlace.append(svgLogo);
+  enlace.append(pageTitle);
+  nav.appendChild(input);
+  nav.appendChild(enlaceMenu);
+  nav.appendChild(lista);
+  document.getElementById("header").append(enlace);
+  document.getElementById("header").append(nav);
+}
+
+function createItemList(ref, name) {
+  var item = document.createElement("li");
+  var enlace = document.createElement("a");
+  enlace.href = ref;
+  enlace.textContent = name;
+  item.appendChild(enlace);
+  return item;
 }
 
 function createSVG() {
-  return "<svg viewBox=\"-1 -1 85 75\" height=\"100\" class=\"logo\">\n      <defs>\n        <polyline id=\"contornohoja\" points=\"10,40 0,30 0,10 10,0 20,10 20,30 10,40 10,50 10,0\"></polyline>\n        <line id=\"left\" x1=\"10\" y1=\"10\" x2=\"0\" y2=\"0\"></line>\n        <line id=\"right\" x1=\"0\" y1=\"10\" x2=\"10\" y2=\"0\"></line>\n      </defs>\n      <g stroke=\"#000\" stroke-width=\"3\" fill=\"transparent\">\n        <use xlink:href=\"#left\" x=\"0\" y=\"20\" />\n        <use xlink:href=\"#left\" x=\"0\" y=\"27.5\" />\n        <use xlink:href=\"#right\" x=\"10\" y=\"20\" />\n        <use xlink:href=\"#right\" x=\"10\" y=\"32.5\" />\n        <use xlink:href=\"#contornohoja\" x=\"0\" y=\"10\" />\n      \n        <line x1=\"30\" y1=\"15\" x2=\"22.25\" y2=\"7.5\"></line>\n        <use xlink:href=\"#left\" x=\"20\" y=\"22.5\" />\n        <use xlink:href=\"#right\" x=\"30\" y=\"10\" />\n        <use xlink:href=\"#right\" x=\"30\" y=\"22.5\" />\n        <use xlink:href=\"#contornohoja\" x=\"20\" y=\"0\" />\n      \n        <line x1=\"50\" y1=\"30\" x2=\"45\" y2=\"25\"></line>\n        <use xlink:href=\"#left\" x=\"40\" y=\"30\" />\n        <use xlink:href=\"#left\" x=\"40\" y=\"40\" />\n        <line x1=\"50\" y1=\"35\" x2=\"57.5\" y2=\"27.5\"></line>\n        <use xlink:href=\"#right\" x=\"50\" y=\"40\" />\n        <use xlink:href=\"#contornohoja\" x=\"40\" y=\"20\" />\n      \n        <use xlink:href=\"#left\" x=\"60\" y=\"30\" />\n        <use xlink:href=\"#left\" x=\"60\" y=\"37.5\" />\n        <line x1=\"70\" y1=\"30\" x2=\"75\" y2=\"25\"></line>\n        <use xlink:href=\"#right\" x=\"70\" y=\"30\" />\n        <use xlink:href=\"#right\" x=\"70\" y=\"40\" />\n        <use xlink:href=\"#right\" x=\"70\" y=\"40\" />\n        <use xlink:href=\"#contornohoja\" x=\"60\" y=\"20\" />\n      </g>\n      </svg>";
-}
-
-function getSVG() {
-  return "<defs>\n        <polyline id=\"contornohoja\" points=\"10,40 0,30 0,10 10,0 20,10 20,30 10,40 10,50 10,0\"></polyline>\n        <line id=\"left\" x1=\"10\" y1=\"10\" x2=\"0\" y2=\"0\"></line>\n        <line id=\"right\" x1=\"0\" y1=\"10\" x2=\"10\" y2=\"0\"></line>\n      </defs>\n      <g stroke=\"#fff\" stroke-width=\"3\" fill=\"transparent\">\n        <use xlink:href=\"#left\" x=\"0\" y=\"20\" />\n        <use xlink:href=\"#left\" x=\"0\" y=\"27.5\" />\n        <use xlink:href=\"#right\" x=\"10\" y=\"20\" />\n        <use xlink:href=\"#right\" x=\"10\" y=\"32.5\" />\n        <use xlink:href=\"#contornohoja\" x=\"0\" y=\"10\" />\n      \n        <line x1=\"30\" y1=\"15\" x2=\"22.25\" y2=\"7.5\"></line>\n        <use xlink:href=\"#left\" x=\"20\" y=\"22.5\" />\n        <use xlink:href=\"#right\" x=\"30\" y=\"10\" />\n        <use xlink:href=\"#right\" x=\"30\" y=\"22.5\" />\n        <use xlink:href=\"#contornohoja\" x=\"20\" y=\"0\" />\n      \n        <line x1=\"50\" y1=\"30\" x2=\"45\" y2=\"25\"></line>\n        <use xlink:href=\"#left\" x=\"40\" y=\"30\" />\n        <use xlink:href=\"#left\" x=\"40\" y=\"40\" />\n        <line x1=\"50\" y1=\"35\" x2=\"57.5\" y2=\"27.5\"></line>\n        <use xlink:href=\"#right\" x=\"50\" y=\"40\" />\n        <use xlink:href=\"#contornohoja\" x=\"40\" y=\"20\" />\n      \n        <use xlink:href=\"#left\" x=\"60\" y=\"30\" />\n        <use xlink:href=\"#left\" x=\"60\" y=\"37.5\" />\n        <line x1=\"70\" y1=\"30\" x2=\"75\" y2=\"25\"></line>\n        <use xlink:href=\"#right\" x=\"70\" y=\"30\" />\n        <use xlink:href=\"#right\" x=\"70\" y=\"40\" />\n        <use xlink:href=\"#right\" x=\"70\" y=\"40\" />\n        <use xlink:href=\"#contornohoja\" x=\"60\" y=\"20\" />\n      </g>";
+  return "<svg viewBox=\"-1 -1 85 75\" height=\"50\" class=\"logo\">\n    <defs>\n      <polyline id=\"contornohoja\" points=\"10,40 0,30 0,10 10,0 20,10 20,30 10,40 10,50 10,0\"></polyline>\n      <line id=\"left\" x1=\"10\" y1=\"10\" x2=\"0\" y2=\"0\"></line>\n      <line id=\"right\" x1=\"0\" y1=\"10\" x2=\"10\" y2=\"0\"></line>\n    </defs>\n    <g stroke=\"#fff\" stroke-width=\"3\" fill=\"transparent\">\n      <use xlink:href=\"#left\" x=\"0\" y=\"20\" />\n      <use xlink:href=\"#left\" x=\"0\" y=\"27.5\" />\n      <use xlink:href=\"#right\" x=\"10\" y=\"20\" />\n      <use xlink:href=\"#right\" x=\"10\" y=\"32.5\" />\n      <use xlink:href=\"#contornohoja\" x=\"0\" y=\"10\" />\n    \n      <line x1=\"30\" y1=\"15\" x2=\"22.25\" y2=\"7.5\"></line>\n      <use xlink:href=\"#left\" x=\"20\" y=\"22.5\" />\n      <use xlink:href=\"#right\" x=\"30\" y=\"10\" />\n      <use xlink:href=\"#right\" x=\"30\" y=\"22.5\" />\n      <use xlink:href=\"#contornohoja\" x=\"20\" y=\"0\" />\n    \n      <line x1=\"50\" y1=\"30\" x2=\"45\" y2=\"25\"></line>\n      <use xlink:href=\"#left\" x=\"40\" y=\"30\" />\n      <use xlink:href=\"#left\" x=\"40\" y=\"40\" />\n      <line x1=\"50\" y1=\"35\" x2=\"57.5\" y2=\"27.5\"></line>\n      <use xlink:href=\"#right\" x=\"50\" y=\"40\" />\n      <use xlink:href=\"#contornohoja\" x=\"40\" y=\"20\" />\n    \n      <use xlink:href=\"#left\" x=\"60\" y=\"30\" />\n      <use xlink:href=\"#left\" x=\"60\" y=\"37.5\" />\n      <line x1=\"70\" y1=\"30\" x2=\"75\" y2=\"25\"></line>\n      <use xlink:href=\"#right\" x=\"70\" y=\"30\" />\n      <use xlink:href=\"#right\" x=\"70\" y=\"40\" />\n      <use xlink:href=\"#right\" x=\"70\" y=\"40\" />\n      <use xlink:href=\"#contornohoja\" x=\"60\" y=\"20\" />\n    </g>\n    </svg>";
 }
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -262,7 +195,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57662" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62852" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -438,5 +371,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","layouts/footer.js"], null)
-//# sourceMappingURL=/footer.c71fe17e.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","navbar.js"], null)
+//# sourceMappingURL=/navbar.39a67d4a.js.map

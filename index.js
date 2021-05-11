@@ -1,7 +1,8 @@
 import AOS from "./node_modules/aos";
 import Splide from "./node_modules/@splidejs/splide";
+import { createFooter } from "./footer";
+import { createNavbar } from "./navbar";
 
-// jQuery(function () {
 AOS.init();
 
 let offsetMarList, countMarList, offsetTierraList, countTierraList;
@@ -108,18 +109,9 @@ function checkPosition() {
   }
 }
 window.addEventListener("scroll", checkPosition);
-function init() {
-  checkPosition();
-  // console.log(document.getElementById("header"));
-  // document.getElementById("header").src = "./layouts/navBar.html";
-}
-init();
 
-// $("#header").load("./layouts/navBar.html");
-// $("#main").load("./pages/references2.html");
-// $("#footer").load("./layouts/footer.html")
-// });
-// $(function () {
-//   console.log("$header");
-//   $("#header").append("navBar.html");
-// });
+window.addEventListener("load", () => {
+  createFooter();
+  createNavbar();
+  checkPosition();
+});
