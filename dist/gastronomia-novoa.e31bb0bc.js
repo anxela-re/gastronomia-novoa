@@ -6194,6 +6194,11 @@ function createItemList(ref, name) {
   var enlace = document.createElement("a");
   enlace.href = ref;
   enlace.textContent = name;
+
+  if (document.documentURI.includes(ref.split("-")[1])) {
+    item.classList.add("selected");
+  }
+
   item.appendChild(enlace);
   return item;
 }
@@ -6219,89 +6224,6 @@ function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symb
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-_aos.default.init();
-
-var offsetMarList, countMarList, offsetTierraList, countTierraList;
-var marList = document.querySelector("#mar-category-list");
-var seeMoreMarBtn = document.querySelector("#seeMoreMarBtn");
-var offsetMarListEl = document.querySelector("#offsetMarList");
-var countMarListEl = document.querySelector("#countMarList");
-var tierraList = document.querySelector("#tierra-category-list");
-var seeMoreTierraBtn = document.querySelector("#seeMoreTierraBtn");
-var offsetTierraListEl = document.querySelector("#offsetTierraList");
-var countTierraListEl = document.querySelector("#countTierraList");
-offsetMarList = 10;
-offsetTierraList = 10;
-
-if (marList) {
-  countMarList = marList.children.length;
-  offsetMarListEl.textContent = offsetMarList;
-  countMarListEl.textContent = countMarList;
-}
-
-if (seeMoreMarBtn) {
-  seeMoreMarBtn.addEventListener("click", function () {
-    if (marList) {
-      var top = offsetMarList + 6 < countMarList ? offsetMarList + 6 : countMarList;
-
-      for (var i = offsetMarList; i < top; i++) {
-        var item = marList.children.item(i);
-        if (item) item.style.display = "inherit";
-      }
-
-      offsetMarList = top;
-
-      if (offsetMarList === countMarList) {
-        seeMoreMarBtn.disabled = true;
-      }
-
-      offsetMarListEl.textContent = offsetMarList;
-    }
-  });
-}
-
-if (tierraList) {
-  countTierraList = tierraList.children.length;
-  offsetTierraListEl.textContent = offsetTierraList;
-  countTierraListEl.textContent = countTierraList;
-}
-
-if (seeMoreTierraBtn) {
-  seeMoreTierraBtn.addEventListener("click", function () {
-    if (tierraList) {
-      var top = offsetTierraList + 6 < countTierraList ? offsetTierraList + 6 : countTierraList;
-
-      for (var i = offsetTierraList; i < top; i++) {
-        var item = tierraList.children.item(i);
-        if (item) item.style.display = "inherit";
-      }
-
-      offsetTierraList = top;
-
-      if (offsetTierraList === countTierraList) {
-        seeMoreTierraBtn.disabled = true;
-      }
-
-      offsetTierraListEl.textContent = offsetTierraList;
-    }
-  });
-}
-
-if (document.querySelector(".splide")) {
-  new _splide.default(".splide", {
-    type: "loop",
-    perPage: Math.floor(document.querySelector("body").clientWidth / 350),
-    height: "9rem",
-    cover: true,
-    breakpoins: {
-      640: {
-        height: "6rem"
-      }
-    },
-    gap: "1rem"
-  }).mount();
-}
 
 function checkPosition() {
   var logos = document.getElementsByClassName("logo");
@@ -6355,11 +6277,103 @@ function checkPosition() {
   }
 }
 
+function createPaginatorMar() {
+  var offsetMarList, countMarList;
+  var marList = document.querySelector("#mar-category-list");
+  var seeMoreMarBtn = document.querySelector("#seeMoreMarBtn");
+  var offsetMarListEl = document.querySelector("#offsetMarList");
+  var countMarListEl = document.querySelector("#countMarList");
+  offsetMarList = 10;
+
+  if (marList) {
+    countMarList = marList.children.length;
+    offsetMarListEl.textContent = offsetMarList;
+    countMarListEl.textContent = countMarList;
+  }
+
+  if (seeMoreMarBtn) {
+    seeMoreMarBtn.addEventListener("click", function () {
+      if (marList) {
+        var top = offsetMarList + 6 < countMarList ? offsetMarList + 6 : countMarList;
+
+        for (var i = offsetMarList; i < top; i++) {
+          var item = marList.children.item(i);
+          if (item) item.style.display = "inherit";
+        }
+
+        offsetMarList = top;
+
+        if (offsetMarList === countMarList) {
+          seeMoreMarBtn.disabled = true;
+        }
+
+        offsetMarListEl.textContent = offsetMarList;
+      }
+    });
+  }
+}
+
+function createPaginatorTierra() {
+  var offsetTierraList, countTierraList;
+  var tierraList = document.querySelector("#tierra-category-list");
+  var seeMoreTierraBtn = document.querySelector("#seeMoreTierraBtn");
+  var offsetTierraListEl = document.querySelector("#offsetTierraList");
+  var countTierraListEl = document.querySelector("#countTierraList");
+  offsetTierraList = 10;
+
+  if (tierraList) {
+    countTierraList = tierraList.children.length;
+    offsetTierraListEl.textContent = offsetTierraList;
+    countTierraListEl.textContent = countTierraList;
+  }
+
+  if (seeMoreTierraBtn) {
+    seeMoreTierraBtn.addEventListener("click", function () {
+      if (tierraList) {
+        var top = offsetTierraList + 6 < countTierraList ? offsetTierraList + 6 : countTierraList;
+
+        for (var i = offsetTierraList; i < top; i++) {
+          var item = tierraList.children.item(i);
+          if (item) item.style.display = "inherit";
+        }
+
+        offsetTierraList = top;
+
+        if (offsetTierraList === countTierraList) {
+          seeMoreTierraBtn.disabled = true;
+        }
+
+        offsetTierraListEl.textContent = offsetTierraList;
+      }
+    });
+  }
+}
+
 window.addEventListener("scroll", checkPosition);
 window.addEventListener("load", function () {
   (0, _footer.createFooter)();
   (0, _navbar.createNavbar)();
   checkPosition();
+
+  _aos.default.init();
+
+  createPaginatorMar();
+  createPaginatorTierra();
+
+  if (document.querySelector(".splide")) {
+    new _splide.default(".splide", {
+      type: "loop",
+      perPage: Math.floor(document.querySelector("body").clientWidth / 350),
+      height: "9rem",
+      cover: true,
+      breakpoins: {
+        640: {
+          height: "6rem"
+        }
+      },
+      gap: "1rem"
+    }).mount();
+  }
 });
 },{"./node_modules/aos":"node_modules/aos/dist/aos.js","./node_modules/@splidejs/splide":"node_modules/@splidejs/splide/dist/js/splide.esm.js","./footer":"footer.js","./navbar":"navbar.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -6389,7 +6403,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62852" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65088" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

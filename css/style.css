@@ -155,9 +155,6 @@ nav input[type="checkbox"]:checked + a::after {
   header {
     flex-direction: row;
   }
-  header > a {
-    /* width: 35%; */
-  }
 }
 /* PEC2 */
 header {
@@ -658,9 +655,12 @@ article ul {
 .conocenos .parallax:nth-of-type(3) {
   background-image: url(../img/pexels-jeremy-bishop-2765872.jpg);
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 500px) {
   .conocenos p {
     text-align: justify;
+  }
+  .conocenos .parallax:nth-of-type(3) {
+    background-image: url(../img/pexels-jeremy-bishop-2765872.jpg);
   }
 }
 

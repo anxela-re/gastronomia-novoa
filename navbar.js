@@ -35,11 +35,15 @@ export function createNavbar() {
   document.getElementById("header").append(enlace);
   document.getElementById("header").append(nav);
 }
+
 function createItemList(ref, name) {
   let item = document.createElement("li");
   let enlace = document.createElement("a");
   enlace.href = ref;
   enlace.textContent = name;
+  if (document.documentURI.includes(ref.split("-")[1])) {
+    item.classList.add("selected");
+  }
   item.appendChild(enlace);
   return item;
 }
