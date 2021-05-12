@@ -6239,10 +6239,8 @@ function checkPosition() {
 
         if (positionFromTop - window.innerHeight <= 0) {
           logo.classList.add("logo-animation");
-          logo.classList.remove("logo-init");
         } else {
           logo.classList.remove("logo-animation");
-          logo.classList.add("logo-init");
         }
       }
     } catch (err) {
@@ -6403,7 +6401,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61912" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49682" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

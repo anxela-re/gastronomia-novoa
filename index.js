@@ -10,10 +10,8 @@ function checkPosition() {
       let positionFromTop = logo.getBoundingClientRect().top;
       if (positionFromTop - window.innerHeight <= 0) {
         logo.classList.add("logo-animation");
-        logo.classList.remove("logo-init");
       } else {
         logo.classList.remove("logo-animation");
-        logo.classList.add("logo-init");
       }
     }
   }
