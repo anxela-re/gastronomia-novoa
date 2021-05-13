@@ -195,6 +195,10 @@ footer svg.logo {
 }
 
 svg.categoria-animation g#field g {
+  fill-opacity: 0;
+  stroke-opacity: 0;
+}
+svg.categoria-animation g#field g {
   animation: fill-opacity 5s forwards;
 }
 
