@@ -135,7 +135,13 @@
           <li>
             <a href="category-tierra.html">
               <svg viewBox="0 0 300 300" width="150" class="categoria" height="150" xmlns="http://www.w3.org/2000/svg">
-                <g id="field" clip-path="url(#shapeCircle)">
+
+                <defs>
+                  <clipPath id="shapeCircle2">
+                    <circle cx="150" cy="150" r="150"></circle>
+                  </clipPath>
+                </defs>
+                <g id="field" clip-path="url(#shapeCircle2)">
                   <rect x="0" y="0" width="300" height="300" fill="#fff" />
                   <g fill-opacity="0" stroke-opacity="0" stroke-width="1.5">
                     <path
