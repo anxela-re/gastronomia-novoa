@@ -6,7 +6,7 @@ export function createNavbar() {
   svgLogo.innerHTML = createSVG();
 
   let pageTitle = document.createElement("h1");
-  pageTitle.textContent = "Gastornomia Novoa";
+  pageTitle.textContent = "Gastronomia Novoa";
 
   let nav = document.createElement("nav");
 

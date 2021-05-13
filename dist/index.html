@@ -37,14 +37,14 @@
       <ul>
         <li>
           <a href="/category-mar.html">
-            <svg xmlns="http://www.w3.org/2000/svg" class="categoria" viewBox="0 0 300 300" fill="none" with="150" height="150">
+            <svg xmlns="http://www.w3.org/2000/svg" class="categoria" viewBox="0 0 300 300" fill="none" width="150" height="150">
               <defs>
                 <clipPath id="shapeCircle">
                   <circle cx="150" cy="150" r="150"></circle>
                 </clipPath>
               </defs>
               <g id="sea" clip-path="url(#shapeCircle)">
-                <rect x="0" y="0" width="300" height="300" fill="#fff" id="rect"></rect>
+                <rect x="0" y="0" width="300" height="300" fill="#fff"></rect>
                 <g stroke-opacity="0.4" stroke="white" fill="#84C3E3" stroke-width="1.5">
                   <path d="M 0 123 C 0 123 43 120 71 120 C 102 121 117 122 147 123 C 177 123 195 123 225 123 C 254 122 300 123 300 123 V 300 H 0 V 0 Z" fill-opacity="0.05"></path>
                   <path d="M 300 133 C 300 133 256 130 228 130 C 197 131 182 132 152 133 C 122 133 104 134 74 133 C 45 132 0 133 0 133 V 300 H 300 V 0 Z" fill-opacity="0.1"></path>
@@ -66,13 +66,8 @@
         <li>
           <a href="/category-tierra.html">
             <svg viewBox="0 0 300 300" width="150" class="categoria" height="150" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <clipPath id="shapeCircle">
-                  <circle cx="150" cy="150" r="150"></circle>
-                </clipPath>
-              </defs>
               <g id="field" clip-path="url(#shapeCircle)">
-                <rect x="0" y="0" width="300" height="300" fill="#fff" id="rect"></rect>
+                <rect x="0" y="0" width="300" height="300" fill="#fff"></rect>
                 <g fill-opacity="0" stroke-opacity="0" stroke-width="1.5">
                   <path d="M 0 120 C 0 122 45 123 60 124 C 100 128 120 130 140 132 C 150 134 200 136 230 138 C 250 140 300 145 300 150 V 300 H 0 V 0 Z" fill="#BAD063" stroke="#BAD063"></path>
                   <path d="M 300 125 C 300 125 255 126 220 130 C 180 135 150 140 150 140 C 150 140 100 150 70 160 C 42 165 0 170 0 170 V 300 H 300 V 0 Z" fill="#BAD063" stroke="#BAD063"></path>
@@ -304,7 +299,11 @@
     </div>
     <div class="categories">
       <div class="background-tierra category">
-        <img src="/pexels-pixabay-162240-500.47be7d81.jpg" alt="vaca pixabay">
+        <picture>
+          <source media="(max-width: 999px)" srcset="/pexels-pixabay-162240-crop.199da86a.jpg">
+          <source media="(min-width: 1000px)" srcset="/pexels-pixabay-162240.acc41815.jpg">
+          <img src="/pexels-pixabay-162240.acc41815.jpg" alt="vaca pixabay">
+        </picture>
         <p>
           Apoya un consumo responsable y busca alternativas a la alimentación
           carnívora
@@ -317,7 +316,11 @@
           nutrientes que los obtenidos en el mar
         </p>
         <a href="/category-mar.html"><i class="fa fa-3x fas fa-arrow-right"></i></a>
-        <img src="/pexels-jeremy-bishop-2922672.fb1c39cb.jpg" alt="delfines Jeremy Bishop">
+        <picture>
+          <source media="(max-width: 999px)" srcset="/pexels-jeremy-bishop-2922672-crop.c9c17fcf.jpg">
+          <source media="(min-width: 1000px)" srcset="/pexels-jeremy-bishop-2922672.fb1c39cb.jpg">
+          <img src="/pexels-jeremy-bishop-2922672.fb1c39cb.jpg" alt="delfines Jeremy Bishop">
+        </picture>
       </div>
     </div>
   </main>
@@ -329,4 +332,3 @@
 </body>
 
 </html>
-

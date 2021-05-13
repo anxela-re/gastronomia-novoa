@@ -6165,7 +6165,7 @@ function createNavbar() {
   var svgLogo = document.createElement("div");
   svgLogo.innerHTML = createSVG();
   var pageTitle = document.createElement("h1");
-  pageTitle.textContent = "Gastornomia Novoa";
+  pageTitle.textContent = "Gastronomia Novoa";
   var nav = document.createElement("nav");
   var input = document.createElement("input");
   input.type = "checkbox";
@@ -6401,7 +6401,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49682" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51197" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

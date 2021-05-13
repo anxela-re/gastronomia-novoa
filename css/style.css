@@ -41,6 +41,7 @@ ul {
   list-style: none;
 }
 a {
+  overflow-wrap: break-word;
   text-decoration: none;
   color: #000;
 }
@@ -63,6 +64,7 @@ header h1 {
   padding-left: 1rem;
   margin: 0;
   color: #fff;
+  font-size: 1.8rem;
 }
 header > a {
   /* width: calc(100% - 4rem); */
@@ -141,6 +143,9 @@ nav input[type="checkbox"]:checked + a::after {
   content: "\f00d";
 }
 @media only screen and (min-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
   nav input[type="checkbox"],
   nav input[type="checkbox"] + a {
     display: none;
@@ -190,8 +195,6 @@ footer svg.logo {
 }
 
 svg.categoria-animation g#field g {
-  fill-opacity: 0;
-  stroke-opacity: 0;
   animation: fill-opacity 5s forwards;
 }
 
@@ -239,11 +242,16 @@ p.big {
 
 /* INIT SECTION */
 .presentation {
-  background-image: url("../img/background3.jpg");
+  background-image: url("../img/background3-crop.jpg");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
   padding: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .presentation {
+    background-image: url("../img/background3.jpg");
+  }
 }
 .presentation > div {
   max-width: 700px;
@@ -438,12 +446,21 @@ input.search {
   padding: 1rem;
 }
 .category.background-mar {
-  background-image: url(../img/pexels-jeremy-bishop-2922672.jpg);
+  background-image: url(../img/pexels-jeremy-bishop-2922672-crop.jpg);
 }
 .category.background-tierra {
-  background-image: url(../img/pexels-pixabay-162240-768.jpg);
+  background-image: url(../img/pexels-pixabay-162240-crop.jpg);
 }
-.category img {
+@media only screen and (min-width: 500px) {
+  .category.background-mar {
+    background-image: url(../img/pexels-jeremy-bishop-2922672.jpg);
+  }
+  .category.background-tierra {
+    background-image: url(../img/pexels-pixabay-162240-768.jpg);
+  }
+}
+.category img,
+.category picture {
   display: none;
 }
 .category p {
@@ -466,11 +483,22 @@ input.search {
     display: flex;
     padding: 0;
   }
+  .category picture {
+    display: block;
+    max-width: 500px;
+    min-width: 300px;
+  }
+  .category picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   .category img {
     display: block;
     object-fit: cover;
     width: 100%;
     max-width: 500px;
+    min-width: 300px;
   }
   .category p {
     font-size: 2.5rem;
@@ -530,8 +558,8 @@ input.search {
   opacity: 0.7;
 }
 .container-category section ul li img {
-  width: 40%;
-  max-width: 300px;
+  width: 30%;
+  max-width: 200px;
   object-fit: contain;
   background-color: #fff;
 }
@@ -620,13 +648,18 @@ article ul {
   background-color: #fff;
   padding: 0.5rem;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 500px) {
   .detail-category article img {
-    width: 30%;
+    width: 50%;
     float: left;
   }
   .detail-category p {
     text-align: justify;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .detail-category article img {
+    width: 50%;
   }
 }
 
@@ -639,29 +672,35 @@ article ul {
   background-color: #fff;
 }
 .conocenos .parallax {
-  height: 150px;
+  height: 300px;
   background-attachment: fixed;
-  background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 .conocenos .parallax:nth-of-type(1) {
-  background-position: bottom;
-  background-image: url(../img/pexels-karolina-grabowska-4207908.jpg);
-}
-.conocenos .parallax:nth-of-type(2) {
+  background-position: top;
   background-image: url(../img/pexels-adrian-dorobantu-2127967.jpg);
 }
+.conocenos .parallax:nth-of-type(2) {
+  background-position: center;
+  background-image: url(../img/pexels-karolina-grabowska-4207909.jpg);
+}
 .conocenos .parallax:nth-of-type(3) {
+  background-position: center;
   background-image: url(../img/pexels-jeremy-bishop-2765872.jpg);
 }
 @media only screen and (min-width: 500px) {
-  .conocenos .parallax {
-    height: 300px;
-    background-size: cover;
-  }
   .conocenos p {
     text-align: justify;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .conocenos .parallax:nth-of-type(1) {
+    background-image: url(../img/pexels-adrian-dorobantu-2127967.jpg);
+  }
+  .conocenos .parallax:nth-of-type(2) {
+    background-image: url(../img/pexels-karolina-grabowska-4207909.jpg);
   }
   .conocenos .parallax:nth-of-type(3) {
     background-image: url(../img/pexels-jeremy-bishop-2765872.jpg);
