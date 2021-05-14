@@ -54,38 +54,34 @@ function createItemList(ref, name) {
 
 function createSVG() {
   return `<svg viewBox="-1 -1 85 75" height="50" class="logo">
-    <defs>
-      <polyline id="contornohoja" points="10,40 0,30 0,10 10,0 20,10 20,30 10,40 10,50 10,0"></polyline>
-      <line id="left" x1="10" y1="10" x2="0" y2="0"></line>
-      <line id="right" x1="0" y1="10" x2="10" y2="0"></line>
-    </defs>
-    <g stroke="#fff" stroke-width="3" fill="transparent">
-      <use xlink:href="#left" x="0" y="20" />
-      <use xlink:href="#left" x="0" y="27.5" />
-      <use xlink:href="#right" x="10" y="20" />
-      <use xlink:href="#right" x="10" y="32.5" />
-      <use xlink:href="#contornohoja" x="0" y="10" />
-    
-      <line x1="30" y1="15" x2="22.25" y2="7.5"></line>
-      <use xlink:href="#left" x="20" y="22.5" />
-      <use xlink:href="#right" x="30" y="10" />
-      <use xlink:href="#right" x="30" y="22.5" />
-      <use xlink:href="#contornohoja" x="20" y="0" />
-    
-      <line x1="50" y1="30" x2="45" y2="25"></line>
-      <use xlink:href="#left" x="40" y="30" />
-      <use xlink:href="#left" x="40" y="40" />
-      <line x1="50" y1="35" x2="57.5" y2="27.5"></line>
-      <use xlink:href="#right" x="50" y="40" />
-      <use xlink:href="#contornohoja" x="40" y="20" />
-    
-      <use xlink:href="#left" x="60" y="30" />
-      <use xlink:href="#left" x="60" y="37.5" />
-      <line x1="70" y1="30" x2="75" y2="25"></line>
-      <use xlink:href="#right" x="70" y="30" />
-      <use xlink:href="#right" x="70" y="40" />
-      <use xlink:href="#right" x="70" y="40" />
-      <use xlink:href="#contornohoja" x="60" y="20" />
-    </g>
+      <g stroke="#fff" stroke-width="3" fill="transparent">
+        <line x1="10" y1="30" x2="0" y2="20"></line>
+        <line x1="10" y1="37.5" x2="0" y2="27.5"></line>
+        <line x1="10" y1="30" x2="20" y2="20"></line>
+        <line x1="10" y1="42.5" x2="20" y2="32.5"></line>
+        <polyline points="10,50 0,40 0,20 10,10 20,20 20,40 10,50 10,60 10,10"></polyline>
+
+        <line x1="30" y1="15" x2="22.25" y2="7.5"></line>
+        <line x1="30" y1="32.5" x2="20" y2="22.5"></line>
+        <line x1="30" y1="32.5" x2="20" y2="22.5"></line>
+        <line x1="30" y1="20" x2="40" y2="10"></line>
+        <line x1="30" y1="32.5" x2="40" y2="22.5"></line>
+        <polyline points="30,40 20,30 20,10 30,0 40,10 40,30 30,40 30,50 30,0"></polyline>
+
+        <line x1="50" y1="30" x2="45" y2="25"></line>
+        <line x1="50" y1="40" x2="40" y2="30"></line>
+        <line x1="50" y1="50" x2="40" y2="40"></line>
+        <line x1="50" y1="35" x2="57.5" y2="27.5"></line>
+        <line x1="50" y1="50" x2="60" y2="40"></line>
+        <polyline points="50,60 40,50 40,30 50,20 60,30 60,50 50,60 50,70 50,20"></polyline>
+
+        <line x1="70" y1="40" x2="60" y2="30"></line>
+        <line x1="70" y1="47.5" x2="60" y2="37.5"></line>
+        <line x1="70" y1="30" x2="75" y2="25"></line>
+        <line x1="70" y1="40" x2="80" y2="30"></line>
+        <line x1="70" y1="50" x2="70" y2="40"></line>
+        <line x1="70" y1="50" x2="80" y2="40"></line>
+        <polyline points="70,60 60,50 60,30 70,20 80,30 80,50 70,60 70,70 70,20"></polyline>
+      </g>
     </svg>`;
 }

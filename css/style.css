@@ -67,7 +67,7 @@ header h1 {
   font-size: 1.8rem;
 }
 header > a {
-  /* width: calc(100% - 4rem); */
+  width: calc(100% - 80px);
   margin: 1rem 0;
 }
 nav {
@@ -143,6 +143,9 @@ nav input[type="checkbox"]:checked + a::after {
   content: "\f00d";
 }
 @media only screen and (min-width: 768px) {
+  header > a {
+    width: inherit;
+  }
   header h1 {
     font-size: 2rem;
   }
