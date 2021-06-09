@@ -6149,7 +6149,7 @@ function createContactoContainer() {
 }
 
 function createSVG() {
-  return "<svg viewBox=\"-1 -1 85 75\" height=\"100\" class=\"logo\" loading=\"lazy\">\n      <g stroke=\"#000\" stroke-width=\"3\" fill=\"transparent\">\n      <line x1=\"10\" y1=\"30\" x2=\"0\" y2=\"20\"></line>\n      <line x1=\"10\" y1=\"37.5\" x2=\"0\" y2=\"27.5\"></line>\n      <line x1=\"10\" y1=\"30\" x2=\"20\" y2=\"20\"></line>\n      <line x1=\"10\" y1=\"42.5\" x2=\"20\" y2=\"32.5\"></line>\n      <polyline points=\"10,50 0,40 0,20 10,10 20,20 20,40 10,50 10,60 10,10\"></polyline>\n\n      <line x1=\"30\" y1=\"15\" x2=\"22.25\" y2=\"7.5\"></line>\n      <line x1=\"30\" y1=\"32.5\" x2=\"20\" y2=\"22.5\"></line>\n      <line x1=\"30\" y1=\"32.5\" x2=\"20\" y2=\"22.5\"></line>\n      <line x1=\"30\" y1=\"20\" x2=\"40\" y2=\"10\"></line>\n      <line x1=\"30\" y1=\"32.5\" x2=\"40\" y2=\"22.5\"></line>\n      <polyline points=\"30,40 20,30 20,10 30,0 40,10 40,30 30,40 30,50 30,0\"></polyline>\n\n      <line x1=\"50\" y1=\"30\" x2=\"45\" y2=\"25\"></line>\n      <line x1=\"50\" y1=\"40\" x2=\"40\" y2=\"30\"></line>\n      <line x1=\"50\" y1=\"50\" x2=\"40\" y2=\"40\"></line>\n      <line x1=\"50\" y1=\"35\" x2=\"57.5\" y2=\"27.5\"></line>\n      <line x1=\"50\" y1=\"50\" x2=\"60\" y2=\"40\"></line>\n      <polyline points=\"50,60 40,50 40,30 50,20 60,30 60,50 50,60 50,70 50,20\"></polyline>\n\n      <line x1=\"70\" y1=\"40\" x2=\"60\" y2=\"30\"></line>\n      <line x1=\"70\" y1=\"47.5\" x2=\"60\" y2=\"37.5\"></line>\n      <line x1=\"70\" y1=\"30\" x2=\"75\" y2=\"25\"></line>\n      <line x1=\"70\" y1=\"40\" x2=\"80\" y2=\"30\"></line>\n      <line x1=\"70\" y1=\"50\" x2=\"70\" y2=\"40\"></line>\n      <line x1=\"70\" y1=\"50\" x2=\"80\" y2=\"40\"></line>\n      <polyline points=\"70,60 60,50 60,30 70,20 80,30 80,50 70,60 70,70 70,20\"></polyline>\n    </g>\n  </svg>";
+  return "<svg viewBox=\"-1 -1 85 75\" height=\"100\" class=\"logo\">\n      <g stroke=\"#000\" stroke-width=\"3\" fill=\"transparent\">\n      <line x1=\"10\" y1=\"30\" x2=\"0\" y2=\"20\"></line>\n      <line x1=\"10\" y1=\"37.5\" x2=\"0\" y2=\"27.5\"></line>\n      <line x1=\"10\" y1=\"30\" x2=\"20\" y2=\"20\"></line>\n      <line x1=\"10\" y1=\"42.5\" x2=\"20\" y2=\"32.5\"></line>\n      <polyline points=\"10,50 0,40 0,20 10,10 20,20 20,40 10,50 10,60 10,10\"></polyline>\n\n      <line x1=\"30\" y1=\"15\" x2=\"22.25\" y2=\"7.5\"></line>\n      <line x1=\"30\" y1=\"32.5\" x2=\"20\" y2=\"22.5\"></line>\n      <line x1=\"30\" y1=\"32.5\" x2=\"20\" y2=\"22.5\"></line>\n      <line x1=\"30\" y1=\"20\" x2=\"40\" y2=\"10\"></line>\n      <line x1=\"30\" y1=\"32.5\" x2=\"40\" y2=\"22.5\"></line>\n      <polyline points=\"30,40 20,30 20,10 30,0 40,10 40,30 30,40 30,50 30,0\"></polyline>\n\n      <line x1=\"50\" y1=\"30\" x2=\"45\" y2=\"25\"></line>\n      <line x1=\"50\" y1=\"40\" x2=\"40\" y2=\"30\"></line>\n      <line x1=\"50\" y1=\"50\" x2=\"40\" y2=\"40\"></line>\n      <line x1=\"50\" y1=\"35\" x2=\"57.5\" y2=\"27.5\"></line>\n      <line x1=\"50\" y1=\"50\" x2=\"60\" y2=\"40\"></line>\n      <polyline points=\"50,60 40,50 40,30 50,20 60,30 60,50 50,60 50,70 50,20\"></polyline>\n\n      <line x1=\"70\" y1=\"40\" x2=\"60\" y2=\"30\"></line>\n      <line x1=\"70\" y1=\"47.5\" x2=\"60\" y2=\"37.5\"></line>\n      <line x1=\"70\" y1=\"30\" x2=\"75\" y2=\"25\"></line>\n      <line x1=\"70\" y1=\"40\" x2=\"80\" y2=\"30\"></line>\n      <line x1=\"70\" y1=\"50\" x2=\"70\" y2=\"40\"></line>\n      <line x1=\"70\" y1=\"50\" x2=\"80\" y2=\"40\"></line>\n      <polyline points=\"70,60 60,50 60,30 70,20 80,30 80,50 70,60 70,70 70,20\"></polyline>\n    </g>\n  </svg>";
 }
 },{}],"navbar.js":[function(require,module,exports) {
 "use strict";
@@ -6226,7 +6226,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function checkPosition() {
-  var logos = document.getElementsByClassName("logo");
+  var logos = document.getElementsByClassName('logo');
 
   if (logos.length) {
     var _iterator = _createForOfIteratorHelper(logos),
@@ -6238,9 +6238,9 @@ function checkPosition() {
         var positionFromTop = logo.getBoundingClientRect().top;
 
         if (positionFromTop - window.innerHeight <= 0) {
-          logo.classList.add("logo-animation");
+          logo.classList.add('logo-animation');
         } else {
-          logo.classList.remove("logo-animation");
+          logo.classList.remove('logo-animation');
         }
       }
     } catch (err) {
@@ -6250,7 +6250,7 @@ function checkPosition() {
     }
   }
 
-  var categorias = document.getElementsByClassName("categoria");
+  var categorias = document.getElementsByClassName('categoria');
 
   if (categorias.length) {
     var _iterator2 = _createForOfIteratorHelper(categorias),
@@ -6262,9 +6262,9 @@ function checkPosition() {
         var _positionFromTop = cat.getBoundingClientRect().top;
 
         if (_positionFromTop - window.innerHeight <= 0) {
-          cat.classList.add("categoria-animation");
+          cat.classList.add('categoria-animation');
         } else {
-          cat.classList.remove("categoria-animation");
+          cat.classList.remove('categoria-animation');
         }
       }
     } catch (err) {
@@ -6277,10 +6277,10 @@ function checkPosition() {
 
 function createPaginatorMar() {
   var offsetMarList, countMarList;
-  var marList = document.querySelector("#mar-category-list");
-  var seeMoreMarBtn = document.querySelector("#seeMoreMarBtn");
-  var offsetMarListEl = document.querySelector("#offsetMarList");
-  var countMarListEl = document.querySelector("#countMarList");
+  var marList = document.querySelector('#mar-category-list');
+  var seeMoreMarBtn = document.querySelector('#seeMoreMarBtn');
+  var offsetMarListEl = document.querySelector('#offsetMarList');
+  var countMarListEl = document.querySelector('#countMarList');
   offsetMarList = 10;
 
   if (marList) {
@@ -6290,13 +6290,13 @@ function createPaginatorMar() {
   }
 
   if (seeMoreMarBtn) {
-    seeMoreMarBtn.addEventListener("click", function () {
+    seeMoreMarBtn.addEventListener('click', function () {
       if (marList) {
         var top = offsetMarList + 6 < countMarList ? offsetMarList + 6 : countMarList;
 
         for (var i = offsetMarList; i < top; i++) {
           var item = marList.children.item(i);
-          if (item) item.style.display = "inherit";
+          if (item) item.style.display = 'inherit';
         }
 
         offsetMarList = top;
@@ -6313,10 +6313,10 @@ function createPaginatorMar() {
 
 function createPaginatorTierra() {
   var offsetTierraList, countTierraList;
-  var tierraList = document.querySelector("#tierra-category-list");
-  var seeMoreTierraBtn = document.querySelector("#seeMoreTierraBtn");
-  var offsetTierraListEl = document.querySelector("#offsetTierraList");
-  var countTierraListEl = document.querySelector("#countTierraList");
+  var tierraList = document.querySelector('#tierra-category-list');
+  var seeMoreTierraBtn = document.querySelector('#seeMoreTierraBtn');
+  var offsetTierraListEl = document.querySelector('#offsetTierraList');
+  var countTierraListEl = document.querySelector('#countTierraList');
   offsetTierraList = 10;
 
   if (tierraList) {
@@ -6326,13 +6326,13 @@ function createPaginatorTierra() {
   }
 
   if (seeMoreTierraBtn) {
-    seeMoreTierraBtn.addEventListener("click", function () {
+    seeMoreTierraBtn.addEventListener('click', function () {
       if (tierraList) {
         var top = offsetTierraList + 6 < countTierraList ? offsetTierraList + 6 : countTierraList;
 
         for (var i = offsetTierraList; i < top; i++) {
           var item = tierraList.children.item(i);
-          if (item) item.style.display = "inherit";
+          if (item) item.style.display = 'inherit';
         }
 
         offsetTierraList = top;
@@ -6347,8 +6347,8 @@ function createPaginatorTierra() {
   }
 }
 
-window.addEventListener("scroll", checkPosition);
-window.addEventListener("load", function () {
+window.addEventListener('scroll', checkPosition);
+window.addEventListener('load', function () {
   (0, _footer.createFooter)();
   (0, _navbar.createNavbar)();
   checkPosition();
@@ -6358,18 +6358,18 @@ window.addEventListener("load", function () {
   createPaginatorMar();
   createPaginatorTierra();
 
-  if (document.querySelector(".splide")) {
-    new _splide.default(".splide", {
-      type: "loop",
-      perPage: Math.floor(document.querySelector("body").clientWidth / 350),
-      height: "9rem",
+  if (document.querySelector('.splide')) {
+    new _splide.default('.splide', {
+      type: 'loop',
+      perPage: Math.floor(document.querySelector('body').clientWidth / 350),
+      height: '9rem',
       cover: true,
       breakpoins: {
         640: {
-          height: "6rem"
+          height: '6rem'
         }
       },
-      gap: "1rem"
+      gap: '1rem'
     }).mount();
   }
 });
@@ -6401,7 +6401,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55814" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61091" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
