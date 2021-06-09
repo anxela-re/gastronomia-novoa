@@ -476,17 +476,17 @@ input.search {
   padding: 1rem;
 }
 .category.background-mar {
-  background-image: url(/pexels-jeremy-bishop-2922672-crop.c9c17fcf.jpg);
+  background-image: url(/pexels-jeremy-bishop-2922672-crop.75d80143.webp);
 }
 .category.background-tierra {
-  background-image: url(/pexels-pixabay-162240-crop.199da86a.jpg);
+  background-image: url(/pexels-pixabay-162240-crop.dcf834b8.webp);
 }
 @media only screen and (min-width: 500px) {
   .category.background-mar {
-    background-image: url(/pexels-jeremy-bishop-2922672.fb1c39cb.jpg);
+    background-image: url(/pexels-jeremy-bishop-2922672.b81f19fc.webp);
   }
   .category.background-tierra {
-    background-image: url(/pexels-pixabay-162240-768.67d2bf79.jpg);
+    background-image: url(/pexels-pixabay-162240-768.18d326f4.webp);
   }
 }
 .category img,
