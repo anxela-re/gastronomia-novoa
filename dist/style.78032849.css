@@ -268,7 +268,7 @@ p.big {
 
 /* INIT SECTION */
 .presentation {
-  background-image: url("/background3-crop.f1e187f4.jpg");
+  background-image: url("/background3-crop.2d66e2ce.webp");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -276,7 +276,7 @@ p.big {
 }
 @media screen and (min-width: 768px) {
   .presentation {
-    background-image: url("/background3.88c712a0.jpg");
+    background-image: url("/background3.9b51bf16.webp");
   }
 }
 .presentation > div {
