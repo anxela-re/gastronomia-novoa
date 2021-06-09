@@ -133,7 +133,7 @@ function createContactoContainer() {
 }
 
 function createSVG() {
-  return `<svg viewBox="-1 -1 85 75" height="100" class="logo" loading="lazy">
+  return `<svg viewBox="-1 -1 85 75" height="100" class="logo">
       <g stroke="#000" stroke-width="3" fill="transparent">
       <line x1="10" y1="30" x2="0" y2="20"></line>
       <line x1="10" y1="37.5" x2="0" y2="27.5"></line>

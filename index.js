@@ -1,28 +1,28 @@
-import AOS from "./node_modules/aos";
-import Splide from "./node_modules/@splidejs/splide";
-import { createFooter } from "./footer";
-import { createNavbar } from "./navbar";
+import AOS from './node_modules/aos';
+import Splide from './node_modules/@splidejs/splide';
+import { createFooter } from './footer';
+import { createNavbar } from './navbar';
 
 function checkPosition() {
-  let logos = document.getElementsByClassName("logo");
+  let logos = document.getElementsByClassName('logo');
   if (logos.length) {
     for (let logo of logos) {
       let positionFromTop = logo.getBoundingClientRect().top;
       if (positionFromTop - window.innerHeight <= 0) {
-        logo.classList.add("logo-animation");
+        logo.classList.add('logo-animation');
       } else {
-        logo.classList.remove("logo-animation");
+        logo.classList.remove('logo-animation');
       }
     }
   }
-  let categorias = document.getElementsByClassName("categoria");
+  let categorias = document.getElementsByClassName('categoria');
   if (categorias.length) {
     for (let cat of categorias) {
       let positionFromTop = cat.getBoundingClientRect().top;
       if (positionFromTop - window.innerHeight <= 0) {
-        cat.classList.add("categoria-animation");
+        cat.classList.add('categoria-animation');
       } else {
-        cat.classList.remove("categoria-animation");
+        cat.classList.remove('categoria-animation');
       }
     }
   }
@@ -30,10 +30,10 @@ function checkPosition() {
 
 function createPaginatorMar() {
   let offsetMarList, countMarList;
-  const marList = document.querySelector("#mar-category-list");
-  const seeMoreMarBtn = document.querySelector("#seeMoreMarBtn");
-  const offsetMarListEl = document.querySelector("#offsetMarList");
-  const countMarListEl = document.querySelector("#countMarList");
+  const marList = document.querySelector('#mar-category-list');
+  const seeMoreMarBtn = document.querySelector('#seeMoreMarBtn');
+  const offsetMarListEl = document.querySelector('#offsetMarList');
+  const countMarListEl = document.querySelector('#countMarList');
 
   offsetMarList = 10;
   if (marList) {
@@ -43,13 +43,13 @@ function createPaginatorMar() {
   }
 
   if (seeMoreMarBtn) {
-    seeMoreMarBtn.addEventListener("click", () => {
+    seeMoreMarBtn.addEventListener('click', () => {
       if (marList) {
         let top =
           offsetMarList + 6 < countMarList ? offsetMarList + 6 : countMarList;
         for (let i = offsetMarList; i < top; i++) {
           const item = marList.children.item(i);
-          if (item) item.style.display = "inherit";
+          if (item) item.style.display = 'inherit';
         }
         offsetMarList = top;
         if (offsetMarList === countMarList) {
@@ -64,10 +64,10 @@ function createPaginatorMar() {
 function createPaginatorTierra() {
   let offsetTierraList, countTierraList;
 
-  const tierraList = document.querySelector("#tierra-category-list");
-  const seeMoreTierraBtn = document.querySelector("#seeMoreTierraBtn");
-  const offsetTierraListEl = document.querySelector("#offsetTierraList");
-  const countTierraListEl = document.querySelector("#countTierraList");
+  const tierraList = document.querySelector('#tierra-category-list');
+  const seeMoreTierraBtn = document.querySelector('#seeMoreTierraBtn');
+  const offsetTierraListEl = document.querySelector('#offsetTierraList');
+  const countTierraListEl = document.querySelector('#countTierraList');
 
   offsetTierraList = 10;
 
@@ -78,7 +78,7 @@ function createPaginatorTierra() {
   }
 
   if (seeMoreTierraBtn) {
-    seeMoreTierraBtn.addEventListener("click", () => {
+    seeMoreTierraBtn.addEventListener('click', () => {
       if (tierraList) {
         let top =
           offsetTierraList + 6 < countTierraList
@@ -86,7 +86,7 @@ function createPaginatorTierra() {
             : countTierraList;
         for (let i = offsetTierraList; i < top; i++) {
           const item = tierraList.children.item(i);
-          if (item) item.style.display = "inherit";
+          if (item) item.style.display = 'inherit';
         }
         offsetTierraList = top;
         if (offsetTierraList === countTierraList) {
@@ -98,9 +98,9 @@ function createPaginatorTierra() {
   }
 }
 
-window.addEventListener("scroll", checkPosition);
+window.addEventListener('scroll', checkPosition);
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   createFooter();
   createNavbar();
 
@@ -111,18 +111,19 @@ window.addEventListener("load", () => {
   createPaginatorMar();
   createPaginatorTierra();
 
-  if (document.querySelector(".splide")) {
-    new Splide(".splide", {
-      type: "loop",
-      perPage: Math.floor(document.querySelector("body").clientWidth / 350),
-      height: "9rem",
+  if (document.querySelector('.splide')) {
+    new Splide('.splide', {
+      type: 'loop',
+      perPage: Math.floor(document.querySelector('body').clientWidth / 350),
+      height: '9rem',
       cover: true,
       breakpoins: {
         640: {
-          height: "6rem",
+          height: '6rem',
         },
       },
-      gap: "1rem",
+      gap: '1rem',
     }).mount();
   }
 });
+
