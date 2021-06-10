@@ -556,6 +556,7 @@ input.search {
 .container-category section ul li a {
   display: flex;
   margin: 1rem;
+  width: 100%;
 }
 .container-category#mar section ul li a:hover {
   background-color: var(--mar-color);
