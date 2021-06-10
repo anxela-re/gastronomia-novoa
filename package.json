@@ -21,6 +21,7 @@
     "rimraf": "^2.7.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "@splidejs/splide": "^2.4.21",
     "aos": "^2.3.4",
     "css-ui-table": "^1.0.8"
