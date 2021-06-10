@@ -5,5 +5,5 @@ module.exports = {
   svgo: {
     plugins: [{ removeViewBox: false }, { cleanupIDs: true }],
   },
-  webp: { quality: 10 },
+  webp: { quality: 100 },
 };
