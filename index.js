@@ -98,7 +98,7 @@ function createPaginatorTierra() {
   }
 }
 
-window.addEventListener('scroll', checkPosition);
+window.addEventListener('scroll', checkPosition, { passive: true });
 
 window.addEventListener('load', () => {
   createFooter();
@@ -126,4 +126,3 @@ window.addEventListener('load', () => {
     }).mount();
   }
 });
-

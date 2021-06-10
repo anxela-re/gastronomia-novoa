@@ -6347,7 +6347,9 @@ function createPaginatorTierra() {
   }
 }
 
-window.addEventListener('scroll', checkPosition);
+window.addEventListener('scroll', checkPosition, {
+  passive: true
+});
 window.addEventListener('load', function () {
   (0, _footer.createFooter)();
   (0, _navbar.createNavbar)();
