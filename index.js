@@ -4,17 +4,6 @@ import { createFooter } from './footer';
 import { createNavbar } from './navbar';
 
 function checkPosition() {
-  let logos = document.getElementsByClassName('logo');
-  if (logos.length) {
-    for (let logo of logos) {
-      let positionFromTop = logo.getBoundingClientRect().top;
-      if (positionFromTop - window.innerHeight <= 0) {
-        logo.classList.add('logo-animation');
-      } else {
-        logo.classList.remove('logo-animation');
-      }
-    }
-  }
   let categorias = document.getElementsByClassName('categoria');
   if (categorias.length) {
     for (let cat of categorias) {

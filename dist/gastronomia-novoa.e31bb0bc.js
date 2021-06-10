@@ -6226,51 +6226,27 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function checkPosition() {
-  var logos = document.getElementsByClassName('logo');
+  var categorias = document.getElementsByClassName('categoria');
 
-  if (logos.length) {
-    var _iterator = _createForOfIteratorHelper(logos),
+  if (categorias.length) {
+    var _iterator = _createForOfIteratorHelper(categorias),
         _step;
 
     try {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var logo = _step.value;
-        var positionFromTop = logo.getBoundingClientRect().top;
+        var cat = _step.value;
+        var positionFromTop = cat.getBoundingClientRect().top;
 
         if (positionFromTop - window.innerHeight <= 0) {
-          logo.classList.add('logo-animation');
-        } else {
-          logo.classList.remove('logo-animation');
-        }
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
-  }
-
-  var categorias = document.getElementsByClassName('categoria');
-
-  if (categorias.length) {
-    var _iterator2 = _createForOfIteratorHelper(categorias),
-        _step2;
-
-    try {
-      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-        var cat = _step2.value;
-        var _positionFromTop = cat.getBoundingClientRect().top;
-
-        if (_positionFromTop - window.innerHeight <= 0) {
           cat.classList.add('categoria-animation');
         } else {
           cat.classList.remove('categoria-animation');
         }
       }
     } catch (err) {
-      _iterator2.e(err);
+      _iterator.e(err);
     } finally {
-      _iterator2.f();
+      _iterator.f();
     }
   }
 }

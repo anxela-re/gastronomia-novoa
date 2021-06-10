@@ -727,15 +727,15 @@ article ul {
 }
 .conocenos .parallax:nth-of-type(1) {
   background-position: top;
-  background-image: url(/pexels-adrian-dorobantu-2127967.8b79e00d.jpg);
+  background-image: url(/pexels-adrian-dorobantu-2127967.8455337d.webp);
 }
 .conocenos .parallax:nth-of-type(2) {
   background-position: center;
-  background-image: url(/pexels-karolina-grabowska-4207909.423255b4.jpg);
+  background-image: url(/pexels-karolina-grabowska-4207909.55fdfe1b.webp);
 }
 .conocenos .parallax:nth-of-type(3) {
   background-position: center;
-  background-image: url(/pexels-jeremy-bishop-2765872.a7a0fc4c.jpg);
+  background-image: url(/pexels-jeremy-bishop-2765872.d58e54ac.webp);
 }
 @media only screen and (min-width: 500px) {
   .conocenos p {
@@ -745,13 +745,13 @@ article ul {
 
 @media only screen and (min-width: 768px) {
   .conocenos .parallax:nth-of-type(1) {
-    background-image: url(/pexels-adrian-dorobantu-2127967.8b79e00d.jpg);
+    background-image: url(/pexels-adrian-dorobantu-2127967.8455337d.webp);
   }
   .conocenos .parallax:nth-of-type(2) {
-    background-image: url(/pexels-karolina-grabowska-4207909.423255b4.jpg);
+    background-image: url(/pexels-karolina-grabowska-4207909.55fdfe1b.webp);
   }
   .conocenos .parallax:nth-of-type(3) {
-    background-image: url(/pexels-jeremy-bishop-2765872.a7a0fc4c.jpg);
+    background-image: url(/pexels-jeremy-bishop-2765872.d58e54ac.webp);
   }
 }
 
