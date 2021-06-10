@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-/* @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap');
+
 :root {
   --mar-color: #84c3e3;
   --light-mar-color: #84c3e357;
   --tierra-color: #dd8c22;
   --light-tierra-color: #dd8c2257;
   --background-gray: rgba(237, 237, 237, 0.95);
-  --montserrat-font: "Montserrat", sans-serif;
-  --courier-prime-font: "Courier Prime", monospace;
+  --montserrat-font: 'Montserrat', sans-serif;
+  --courier-prime-font: 'Courier Prime', monospace;
 }
 body {
   min-height: 100vh;
@@ -94,22 +94,22 @@ nav ul li a {
 nav ul li.selected a {
   opacity: 0.6;
 }
-nav ul li a[href*="mar"]:hover,
-nav ul li.selected a[href*="mar"] {
+nav ul li a[href*='mar']:hover,
+nav ul li.selected a[href*='mar'] {
   color: var(--mar-color);
   font-weight: bold;
 }
-nav ul li a[href*="tierra"]:hover,
-nav ul li.selected a[href*="tierra"] {
+nav ul li a[href*='tierra']:hover,
+nav ul li.selected a[href*='tierra'] {
   color: var(--tierra-color);
   font-weight: bold;
 }
 nav ul li a::after {
   margin: auto 1rem;
-  content: "|";
+  content: '|';
 }
 nav ul li:last-child::after {
-  content: "";
+  content: '';
 }
 nav input + a:hover {
   opacity: 1;
@@ -118,7 +118,7 @@ nav input:checked + a + ul {
   display: block;
   margin-top: 0;
 }
-nav input[type="checkbox"] {
+nav input[type='checkbox'] {
   margin-right: 2rem;
   height: 2rem;
   width: 1.6rem;
@@ -131,8 +131,8 @@ nav > a {
   cursor: pointer;
 }
 nav > a::after {
-  content: "\f0c9";
-  font-family: "FontAwesome";
+  content: '\f0c9';
+  font-family: 'FontAwesome';
   font-size: 2rem;
   color: white;
   position: fixed;
@@ -140,8 +140,8 @@ nav > a::after {
   right: 2rem;
   width: 40px;
 }
-nav input[type="checkbox"]:checked + a::after {
-  content: "\f00d";
+nav input[type='checkbox']:checked + a::after {
+  content: '\f00d';
 }
 @media only screen and (min-width: 768px) {
   header > a {
@@ -150,8 +150,8 @@ nav input[type="checkbox"]:checked + a::after {
   header h1 {
     font-size: 2rem;
   }
-  nav input[type="checkbox"],
-  nav input[type="checkbox"] + a {
+  nav input[type='checkbox'],
+  nav input[type='checkbox'] + a {
     display: none;
   }
   nav ul {
@@ -268,7 +268,7 @@ p.big {
 
 /* INIT SECTION */
 .presentation {
-  background-image: url("/background3-crop.2d66e2ce.webp");
+  background-image: url('/background3-crop.2d66e2ce.webp');
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -276,7 +276,7 @@ p.big {
 }
 @media screen and (min-width: 768px) {
   .presentation {
-    background-image: url("/background3.9b51bf16.webp");
+    background-image: url('/background3.9b51bf16.webp');
   }
 }
 .presentation > div {
@@ -297,7 +297,7 @@ input.search {
   display: block;
   font-size: 1.2rem;
   color: #00000088;
-  background-image: url("/icon-search.4b6908c1.png");
+  background-image: url('/icon-search.4b6908c1.png');
   background-repeat: no-repeat;
   background-position-x: right;
   background-position-y: center;
@@ -758,11 +758,11 @@ ul.breadcrumb li {
   display: inline;
 }
 ul.breadcrumb li a::after {
-  content: "/";
+  content: '/';
   margin: auto 1rem;
 }
 ul.breadcrumb li:last-child:after {
-  content: "";
+  content: '';
 }
 ul.breadcrumb li:last-child {
   opacity: 0.5;
@@ -808,31 +808,31 @@ textarea {
   padding: 0.5rem;
   font-family: var(--montserrat-font);
 }
-input[type="checkbox"] {
+input[type='checkbox'] {
   display: inline;
   width: auto;
   height: inherit;
 }
-input[type="checkbox"] + label {
+input[type='checkbox'] + label {
   display: inline-block;
   margin-top: inherit;
   font-size: 0.8rem;
 }
-input[type="submit"],
-input[type="button"] {
+input[type='submit'],
+input[type='button'] {
   width: auto;
   margin: auto;
   margin-top: 1rem;
   height: inherit;
   border: 1px solid #000;
 }
-input[type="submit"]:hover,
-input[type="button"]:not([disabled]):hover {
+input[type='submit']:hover,
+input[type='button']:not([disabled]):hover {
   background-color: #000;
   color: #fff;
   cursor: pointer;
 }
-input[type="button"]:disabled {
+input[type='button']:disabled {
   cursor: inherit;
 }
 input[disabled] {
