@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap');
-/* @import url('../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css'); */
-/* @font-face {
-  font-family: 'FontAwesome';
-  src: url('../node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2') format(woff2);
-} */
+
 :root {
   --mar-color: #84c3e3;
   --light-mar-color: #84c3e357;
