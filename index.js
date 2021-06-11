@@ -1,5 +1,3 @@
-import AOS from './node_modules/aos';
-import Splide from './node_modules/@splidejs/splide';
 import { createFooter } from './footer';
 import { createNavbar } from './navbar';
 
@@ -96,24 +94,30 @@ window.addEventListener('load', () => {
   checkPosition();
 
   if (window.location.pathname.includes('detail')) {
-    AOS.init();
+    import('./node_modules/aos')
+      .then((module) => module.default)
+      .then(AOS.init());
   }
 
   createPaginatorMar();
   createPaginatorTierra();
 
   if (document.querySelector('.splide')) {
-    new Splide('.splide', {
-      type: 'loop',
-      perPage: Math.floor(document.querySelector('body').clientWidth / 350),
-      height: '9rem',
-      cover: true,
-      breakpoins: {
-        640: {
-          height: '6rem',
-        },
-      },
-      gap: '1rem',
-    }).mount();
+    import('./node_modules/@splidejs/splide')
+      .then((module) => module.default)
+      .then(
+        new Splide('.splide', {
+          type: 'loop',
+          perPage: Math.floor(document.querySelector('body').clientWidth / 350),
+          height: '9rem',
+          cover: true,
+          breakpoins: {
+            640: {
+              height: '6rem',
+            },
+          },
+          gap: '1rem',
+        }).mount()
+      );
   }
 });
