@@ -1,94 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap');
 
-:root {
-  --mar-color: #84c3e3;
-  --light-mar-color: #84c3e357;
-  --tierra-color: #dd8c22;
-  --light-tierra-color: #dd8c2257;
-  --background-gray: rgba(237, 237, 237, 0.95);
-  --montserrat-font: 'Montserrat', sans-serif;
-  --courier-prime-font: 'Courier Prime', monospace;
-}
-body {
-  min-height: 100vh;
-  background-color: #fff;
-  color: #000;
-  font-size: 1rem;
-  font-family: var(--courier-prime-font);
-  margin: 0;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--montserrat-font);
-}
-h1 {
-  width: auto;
-}
-h2 {
-  font-size: 3rem;
-}
 h3 {
   font-size: 2rem;
-}
-p {
-  font-size: 1.3rem;
-}
-ul {
-  list-style: none;
-}
-a {
-  overflow-wrap: break-word;
-  text-decoration: none;
-  color: #000;
 }
 a:hover {
   opacity: 0.6;
 }
-
-/* HEADER */
-header {
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  flex-direction: column;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  min-height: 4rem;
-}
-header h1 {
-  padding-left: 1rem;
-  margin: 0;
-  color: #fff;
-  font-size: 1.6rem;
-}
-header > a {
-  width: calc(100% - 80px);
-  margin: 1rem 0;
-}
 nav {
-  margin: 0 auto;
   margin-right: 0;
-  text-align: end;
-}
-nav ul {
-  display: none;
-  margin: 0;
-  padding: 0;
-}
-nav ul li {
-  display: block;
-  min-height: 3rem;
-  height: 100%;
-}
-nav ul li a {
-  display: block;
-  color: #fff;
-  height: 100%;
 }
 nav ul li.selected a {
   opacity: 0.6;
@@ -103,31 +22,12 @@ nav ul li.selected a[href*='tierra'] {
   color: var(--tierra-color);
   font-weight: bold;
 }
-nav ul li a::after {
-  margin: auto 1rem;
-  content: '|';
-}
-nav ul li:last-child::after {
-  content: '';
-}
 nav input + a:hover {
   opacity: 1;
 }
 nav input:checked + a + ul {
   display: block;
   margin-top: 0;
-}
-nav input[type='checkbox'] {
-  margin-right: 2rem;
-  height: 2rem;
-  width: 1.6rem;
-  position: fixed;
-  top: 1.5rem;
-  right: 0;
-  opacity: 0;
-}
-nav > a {
-  cursor: pointer;
 }
 nav > a::after {
   font-family: 'Font Awesome 5 Free';
@@ -165,33 +65,6 @@ nav input[type='checkbox']:checked + a::after {
     flex-direction: row;
   }
 }
-/* PEC2 */
-header {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-header > a {
-  display: flex;
-  flex-direction: row;
-}
-header svg {
-  margin-left: 1rem;
-}
-svg.logo polyline {
-  stroke-dashoffset: 300;
-  stroke-dasharray: 300;
-  animation: stroke-in 5s forwards;
-}
-svg.logo line {
-  stroke-dashoffset: 300;
-  stroke-dasharray: 300;
-  animation: stroke-in 5s forwards;
-  animation-delay: 1s;
-}
-footer svg.logo {
-  width: 100%;
-}
 @keyframes stroke-in {
   to {
     stroke-dashoffset: 0;
@@ -206,40 +79,17 @@ svg.categoria-animation g#field g {
   animation: fill-opacity 5s forwards;
 }
 
-svg.categoria-animation path {
-  stroke-dashoffset: 300;
-  stroke-dasharray: 300;
-  animation: stroke-in 5s forwards;
-}
 @keyframes fill-opacity {
   to {
     stroke-opacity: 0.5;
     fill-opacity: 0.7;
   }
 }
-
-/* MAIN */
-p.big {
-  font-size: 2rem;
-}
 .color-tierra {
   color: var(--tierra-color);
 }
 .color-mar {
   color: var(--mar-color);
-}
-.background-tierra {
-  color: #fff !important;
-  background-color: var(--tierra-color);
-}
-.background-mar {
-  background-color: var(--mar-color);
-}
-.underline.mar {
-  text-decoration-color: var(--mar-color);
-}
-.underline.tierra {
-  text-decoration-color: var(--tierra-color);
 }
 .container > div.stretch-container {
   max-width: 1000px;
@@ -248,7 +98,6 @@ p.big {
   padding: 0 0.5rem;
 }
 
-/* INIT SECTION */
 .presentation {
   background-image: url('../img/background3-crop.webp');
   background-repeat: no-repeat;
@@ -754,45 +603,7 @@ table tr td:first-child {
 .detail-category.tierra table tr.default:nth-child(2n) {
   background-color: var(--light-tierra-color);
 }
-/* FORM */
-input,
-textarea {
-  border-radius: 4px;
-  outline: none;
-  border: none;
-  width: 100%;
-}
-label {
-  display: block;
-  margin: 1rem 0 0.2rem 0;
-}
-input {
-  height: 25px;
-  padding: 0.5rem;
-  font-family: var(--montserrat-font);
-}
-textarea {
-  padding: 0.5rem;
-  font-family: var(--montserrat-font);
-}
-input[type='checkbox'] {
-  display: inline;
-  width: auto;
-  height: inherit;
-}
-input[type='checkbox'] + label {
-  display: inline-block;
-  margin-top: inherit;
-  font-size: 0.8rem;
-}
-input[type='submit'],
-input[type='button'] {
-  width: auto;
-  margin: auto;
-  margin-top: 1rem;
-  height: inherit;
-  border: 1px solid #000;
-}
+
 input[type='submit']:hover,
 input[type='button']:not([disabled]):hover {
   background-color: #000;
@@ -806,75 +617,13 @@ input[disabled] {
   opacity: 0.8;
   border: none;
 }
-/* FOOTER */
-footer {
-  background-color: var(--background-gray);
-  display: grid;
-  grid-gap: 2rem;
-  grid-template-columns: repeat(1, minmax(0, auto));
-  grid-template-rows: repeat(4, minmax(0, auto));
-}
-footer > div {
-  margin: auto;
-}
-footer div:nth-child(1) {
-  grid-row: 1;
-}
-footer div:nth-child(2) {
-  grid-row: 3;
-}
-footer div:nth-child(3) {
-  grid-row: 2;
-}
-footer div:nth-child(4) {
-  grid-row: 4;
-}
-footer h2 {
-  text-align: end;
-  margin-right: 1rem;
-}
-footer p {
-  margin-left: auto;
-  text-align: end;
-  max-width: 350px;
-  margin-right: 1rem;
-}
-footer ul {
-  width: auto;
-  padding: 0;
-  text-align: center;
-}
-footer ul li {
-  display: inline-block;
-  padding: 1rem;
-}
-footer ul li a i.underline {
-  text-decoration: none;
-}
+
 footer ul li a:hover i.underline {
   text-decoration: underline;
   text-decoration-thickness: 8px;
   text-underline-offset: 10px;
 }
-footer form {
-  margin: 2rem;
-}
-.copyrigth {
-  color: #fff;
-  padding-bottom: 0.5rem;
-}
-.copyrigth p {
-  font-size: 0.8rem;
-  text-align: center;
-  display: inline;
-  margin-bottom: 1rem;
-  background-color: #000;
-  padding: 0.5rem;
-}
-.copyrigth a {
-  color: rgba(255, 255, 255, 0.8);
-  font-style: italic;
-}
+
 @media only screen and (min-width: 768px) {
   footer {
     grid-template-columns: repeat(2, minmax(0, auto));

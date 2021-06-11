@@ -8,8 +8,8 @@
     <meta name="author" content="Ánxela Redondo">
     <meta name="description" content="Gastronomía Novoa: Disfruta comiendo cuidando tu entorno natural">
     <meta name="keywords" content="gastronomía novoa vegetarianismo veganismo vegana vegano vegetariana vegetariano cambio">
-    <style>/* @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap'); */
-      :root {
+
+    <style>:root {
         --mar-color: #84c3e3;
         --light-mar-color: rgba(132, 195, 227, 0.3411764705882353);
         --tierra-color: #dd8c22;
@@ -182,186 +182,6 @@
         -webkit-text-decoration-color: var(--tierra-color);
         text-decoration-color: var(--tierra-color);
       }
-      .presentation {
-        background-repeat: no-repeat;
-        background-position: bottom;
-        background-size: cover;
-        padding: 2rem;
-      }
-      .presentation > div {
-        max-width: 700px;
-        margin: auto;
-        text-align: center;
-        color: #fff;
-        padding: 2rem;
-      }
-
-      input.search {
-        width: 90%;
-        max-width: 650px;
-        margin: 2rem auto;
-        background: #ededed;
-        box-shadow: 0 4px 8px hsla(0, 0%, 80.4%, 0.8);
-        border-radius: 100px;
-        padding: 1rem;
-        display: block;
-        font-size: 1.2rem;
-        color: rgba(0, 0, 0, 0.5333333333333333);
-        background-repeat: no-repeat;
-        background-position-x: right;
-        background-position-y: center;
-        background-size: contain;
-        cursor: pointer;
-        outline: none;
-        border: none;
-        font-family: var(--courier-prime-font);
-      }
-
-      .menu-categories {
-        padding: 2rem 1rem;
-        background-color: var(--background-gray);
-      }
-
-      .menu-categories ul {
-        margin: auto;
-        max-width: 1000px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-left: 0;
-      }
-
-      .menu-categories ul li {
-        text-align: center;
-        margin: auto;
-      }
-      .menu-categories ul li p {
-        font-size: 1.2rem;
-        font-weight: 400;
-        margin-top: 0.5rem;
-        font-family: var(--montserrat-font);
-        text-align: center;
-      }
-      .boxes {
-        margin: 1rem auto;
-        width: 95%;
-        max-width: 1000px;
-        display: grid;
-        grid-gap: 1rem;
-        grid-template-columns: repeat(1, minmax(0, auto));
-        grid-template-rows: repeat(12, minmax(250px, auto));
-      }
-
-      .box {
-        perspective: 1000px;
-      }
-
-      .container-box {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-      }
-      .box-back,
-      .box-front {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-      }
-
-      .box-front {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        border-radius: 4px;
-        background-color: rgba(0, 0, 0, 0.9);
-        color: #fff;
-        text-align: center;
-        height: 100%;
-      }
-
-      .box-back {
-        color: #000;
-        transform: rotateY(180deg);
-      }
-
-      .box .underline {
-        -webkit-text-decoration-line: underline;
-        text-decoration-line: underline;
-        text-decoration-thickness: 8px;
-        text-underline-offset: 10px;
-      }
-
-      .box .circle {
-        border-radius: 50%;
-        border: 8px solid;
-        background-color: transparent;
-        width: -webkit-fit-content;
-        width: -moz-fit-content;
-        width: fit-content;
-        margin: auto;
-      }
-
-      .box .circle.mar {
-        border-color: var(--mar-color);
-      }
-
-      .box .circle.tierra {
-        border-color: var(--tierra-color);
-      }
-
-      .box .circle .circle-txt {
-        width: 80px;
-        height: 80px;
-        text-align: center;
-        margin: 0;
-        line-height: 80px;
-      }
-
-      .box p {
-        line-height: 1.5;
-        margin: 1rem;
-      }
-
-      .box-back > div,
-      .box-front > div {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-
-      .category {
-        background-size: cover;
-        background-position-x: left;
-        background-position-y: center;
-        min-height: 300px;
-      }
-
-      .category,
-      .category a {
-        color: #fff;
-        padding: 1rem;
-      }
-
-      .category a {
-        margin-top: auto;
-        margin-right: 0;
-      }
-
-      .category img,
-      .category picture {
-        display: none;
-      }
-
-      .category p {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 0;
-        margin-top: 2rem;
-        font-family: var(--montserrat-font);
-      }
 
       input,
       textarea {
@@ -482,11 +302,10 @@
       }</style>
     <link rel="preload" href="/style.78032849.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/style.78032849.css"></noscript>
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
 
     <link rel="preload" href="/solid.min.140c079f.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/solid.min.140c079f.css"></noscript>
-  <script src="/style.78032849.js"></script><script src="/solid.min.140c079f.js"></script></head>
+  <script src="/style.78032849.js"></script><script src="/solid.min.140c079f.js"></script><script src="/conocenos.js"></script></head>
 
   <body>
     <a href="/conocenos.html"></a>

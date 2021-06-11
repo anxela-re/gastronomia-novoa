@@ -94,9 +94,7 @@ window.addEventListener('load', () => {
   checkPosition();
 
   if (window.location.pathname.includes('detail')) {
-    import('aos')
-      .then((module) => module.default)
-      .then(AOS.init());
+    import('aos').then((AOS) => AOS.init());
   }
 
   createPaginatorMar();
@@ -105,7 +103,7 @@ window.addEventListener('load', () => {
   if (document.querySelector('.splide')) {
     import('@splidejs/splide')
       .then((module) => module.default)
-      .then(
+      .then((Splide) =>
         new Splide('.splide', {
           type: 'loop',
           perPage: Math.floor(document.querySelector('body').clientWidth / 350),

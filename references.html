@@ -1,133 +1,495 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Gastronomía Novoa</title>
     <meta name="author" content="Ánxela Redondo" />
     <meta name="description" content="Gastronomía Novoa: referencias" />
-    <meta name="keywords"
-        content="gastronomía novoa vegetarianismo veganismo vegana vegano vegetariana vegetariano cambio referencias" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      async
-      href="./node_modules/@fortawesome/fontawesome-free/css/solid.min.css"
+    <meta
+      name="keywords"
+      content="gastronomía novoa vegetarianismo veganismo vegana vegano vegetariana vegetariano cambio referencias"
     />
+    <style type="text/css">
+      :root {
+        --mar-color: #84c3e3;
+        --light-mar-color: rgba(132, 195, 227, 0.3411764705882353);
+        --tierra-color: #dd8c22;
+        --light-tierra-color: rgba(221, 140, 34, 0.3411764705882353);
+        --background-gray: hsla(0, 0%, 92.9%, 0.95);
+        --montserrat-font: 'Montserrat', sans-serif;
+        --courier-prime-font: 'Courier Prime', monospace;
+      }
 
-</head>
+      body {
+        min-height: 100vh;
+        background-color: #fff;
+        color: #000;
+        font-size: 1rem;
+        font-family: var(--courier-prime-font);
+        margin: 0;
+      }
 
-<body>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--montserrat-font);
+      }
+
+      h1 {
+        width: auto;
+      }
+
+      h2 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        overflow-wrap: break-word;
+        text-decoration: none;
+        color: #000;
+      }
+      header {
+        background-color: rgba(0, 0, 0, 0.8);
+        flex-direction: column;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        min-height: 4rem;
+      }
+
+      header h1 {
+        padding-left: 1rem;
+        margin: 0;
+        color: #fff;
+        font-size: 1.6rem;
+      }
+
+      header > a {
+        width: calc(100% - 80px);
+        margin: 1rem 0;
+      }
+
+      nav {
+        margin: 0 0 0 auto;
+        text-align: end;
+      }
+
+      nav ul {
+        display: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li {
+        min-height: 3rem;
+      }
+
+      nav ul li,
+      nav ul li a {
+        display: block;
+        height: 100%;
+      }
+
+      nav ul li a {
+        color: #fff;
+      }
+      nav ul li a:after {
+        margin: auto 1rem;
+        content: '|';
+      }
+
+      nav ul li:last-child:after {
+        content: '';
+      }
+      nav input[type='checkbox'] {
+        margin-right: 2rem;
+        height: 2rem;
+        width: 1.6rem;
+        position: fixed;
+        top: 1.5rem;
+        right: 0;
+        opacity: 0;
+      }
+
+      nav > a {
+        cursor: pointer;
+      }
+      header {
+        flex-wrap: wrap;
+      }
+
+      header,
+      header > a {
+        display: flex;
+        flex-direction: row;
+      }
+
+      header svg {
+        margin-left: 1rem;
+      }
+
+      svg.logo line,
+      svg.logo polyline {
+        stroke-dashoffset: 300;
+        stroke-dasharray: 300;
+        -webkit-animation: stroke-in 5s forwards;
+        animation: stroke-in 5s forwards;
+      }
+
+      svg.logo line {
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+      }
+
+      footer svg.logo {
+        width: 100%;
+      }
+      svg.categoria-animation path {
+        stroke-dashoffset: 300;
+        stroke-dasharray: 300;
+        -webkit-animation: stroke-in 5s forwards;
+        animation: stroke-in 5s forwards;
+      }
+      p.big {
+        font-size: 2rem;
+      }
+      .background-tierra {
+        color: #fff !important;
+        background-color: var(--tierra-color);
+      }
+
+      .background-mar {
+        background-color: var(--mar-color);
+      }
+
+      .underline.mar {
+        -webkit-text-decoration-color: var(--mar-color);
+        text-decoration-color: var(--mar-color);
+      }
+
+      .underline.tierra {
+        -webkit-text-decoration-color: var(--tierra-color);
+        text-decoration-color: var(--tierra-color);
+      }
+
+      input,
+      textarea {
+        border-radius: 4px;
+        outline: none;
+        border: none;
+        width: 100%;
+      }
+
+      label {
+        display: block;
+        margin: 1rem 0 0.2rem;
+      }
+
+      input {
+        height: 25px;
+      }
+
+      input,
+      textarea {
+        padding: 0.5rem;
+        font-family: var(--montserrat-font);
+      }
+
+      input[type='checkbox'] {
+        display: inline;
+        width: auto;
+        height: inherit;
+      }
+
+      input[type='checkbox'] + label {
+        display: inline-block;
+        margin-top: inherit;
+        font-size: 0.8rem;
+      }
+
+      input[type='button'],
+      input[type='submit'] {
+        width: auto;
+        margin: 1rem auto auto;
+        height: inherit;
+        border: 1px solid #000;
+      }
+      footer {
+        background-color: var(--background-gray);
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(1, minmax(0, auto));
+        grid-template-rows: repeat(4, minmax(0, auto));
+      }
+
+      footer > div {
+        margin: auto;
+      }
+
+      footer div:first-child {
+        grid-row: 1;
+      }
+
+      footer div:nth-child(2) {
+        grid-row: 3;
+      }
+
+      footer div:nth-child(3) {
+        grid-row: 2;
+      }
+
+      footer div:nth-child(4) {
+        grid-row: 4;
+      }
+
+      footer h2,
+      footer p {
+        text-align: end;
+        margin-right: 1rem;
+      }
+
+      footer p {
+        margin-left: auto;
+        max-width: 350px;
+      }
+
+      footer ul {
+        width: auto;
+        padding: 0;
+        text-align: center;
+      }
+
+      footer ul li {
+        display: inline-block;
+        padding: 1rem;
+      }
+
+      footer ul li a i.underline {
+        text-decoration: none;
+      }
+      footer form {
+        margin: 2rem;
+      }
+
+      .copyrigth {
+        color: #fff;
+        padding-bottom: 0.5rem;
+      }
+
+      .copyrigth p {
+        font-size: 0.8rem;
+        text-align: center;
+        display: inline;
+        margin-bottom: 1rem;
+        background-color: #000;
+        padding: 0.5rem;
+      }
+
+      .copyrigth a {
+        color: hsla(0, 0%, 100%, 0.8);
+        font-style: italic;
+      }
+    </style>
+    <link
+      rel="preload"
+      href="css/style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="css/style.css" /></noscript>
+
+    <link
+      rel="preload"
+      href="./node_modules/@fortawesome/fontawesome-free/css/solid.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="./node_modules/@fortawesome/fontawesome-free/css/solid.min.css"
+    /></noscript>
+  </head>
+
+  <body>
     <a href="conocenos.html"></a>
     <a href="references.html"></a>
     <header id="header"></header>
 
     <main class="container references">
-        <div class="stretch-container">
-            <ul class="breadcrumb">
-                <li><a href="index.html">Inicio</a></li>
-                <li>Referencias</li>
+      <div class="stretch-container">
+        <ul class="breadcrumb">
+          <li><a href="index.html">Inicio</a></li>
+          <li>Referencias</li>
+        </ul>
+        <section>
+          <h2>Referencias</h2>
+          <article>
+            <h3>Referencias contenido de texto</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://scrapsfromtheloft.com/2021/03/30/seaspiracy-2021-transcript/"
+                  target="blank"
+                >
+                  A. (2021, 31 marzo). Seaspiracy (2021) - Transcript. Scraps
+                  from the Loft.
+                  https://scrapsfromtheloft.com/2021/03/30/seaspiracy-2021-transcript/
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://tiempodeactuar.es/blog/cual-es-el-impacto-ambiental-de-la-dieta-carnivora/"
+                  target="blank"
+                >
+                  González, M. N. (2019, 16 enero). ¿Cuál es el impacto
+                  ambiental de la dieta carnívora? Tiempo de actuar.
+                  https://tiempodeactuar.es/blog/cual-es-el-impacto-ambiental-de-la-dieta-carnivora/
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://es.greenpeace.org/es/trabajamos-en/oceanos/pesca/"
+                  target="blank"
+                >
+                  Greenpeace. (2020). Pesca sostenible. Greenpeace España.
+                  https://es.greenpeace.org/es/trabajamos-en/oceanos/pesca/
+                </a>
+              </li>
+              <li>
+                <a
+                  target="blank"
+                  href="https://www.vegaffinity.com/comunidad/alimento/quinoa-beneficios-informacion-nutricional--f213"
+                  >V. (2014, 9 septiembre). Cereales. Vegaffinity.
+                  https://www.vegaffinity.com/comunidad/alimento/quinoa-beneficios-informacion-nutricional--f213</a
+                >
+              </li>
+              <li>
+                <a
+                  target="blank"
+                  href="https://www.vegaffinity.com/comunidad/articulo/sustitutos-de-la-carne-en-la-cocina-vegetariana-o-vegana--a122"
+                  >V. (2016, 10 agosto). Sustitutos de la carne en la cocina
+                  vegetariana o vegana. Vegaffinity.
+                  https://www.vegaffinity.com/comunidad/articulo/sustitutos-de-la-carne-en-la-cocina-vegetariana-o-vegana--a122</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.vegaffinity.com/comunidad/articulo/sustitutos-vegetales-del-pescado-nutricion-recetas-y-productos--a100"
+                  target="blank"
+                  >V. (2016a, junio 13). Sustitutos vegetales del pescado:
+                  Nutrición, Recetas y Productos. Vegaffinity.
+                  https://www.vegaffinity.com/comunidad/articulo/sustitutos-vegetales-del-pescado-nutricion-recetas-y-productos--a100</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://danzadefogones.com/wok-verduras-quinoa/"
+                  target="blank"
+                  >I. (2017, 17 junio). Wok de Verduras y Quinoa. Danza de
+                  Fogones. https://danzadefogones.com/wok-verduras-quinoa/</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://danzadefogones.com/tabule-de-quinoa/"
+                  target="blank"
+                  >I. (2017a, junio 17). Tabule de Quinoa. Danza de Fogones.
+                  https://danzadefogones.com/tabule-de-quinoa/</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://danzadefogones.com/ensalada-de-quinoa/"
+                  target="blank"
+                  >https://danzadefogones.com/ensalada-de-quinoa/</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://danzadefogones.com/chili-de-quinoa/"
+                  target="blank"
+                  >I. (2017a, junio 17). Wok de Verduras y Quinoa. Danza de
+                  Fogones. https://danzadefogones.com/wok-verduras-quinoa/</a
+                >
+              </li>
             </ul>
-            <section>
-                <h2>Referencias</h2>
-                <article>
-                    <h3>Referencias contenido de texto</h3>
-                    <ul>
-                        <li>
-                            <a href="https://scrapsfromtheloft.com/2021/03/30/seaspiracy-2021-transcript/"
-                                target="blank">
-                                A. (2021, 31 marzo). Seaspiracy (2021) - Transcript. Scraps from the Loft.
-                                https://scrapsfromtheloft.com/2021/03/30/seaspiracy-2021-transcript/
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://tiempodeactuar.es/blog/cual-es-el-impacto-ambiental-de-la-dieta-carnivora/"
-                                target="blank">
-                                González, M. N. (2019, 16 enero). ¿Cuál es el impacto ambiental de la dieta carnívora?
-                                Tiempo de actuar.
-                                https://tiempodeactuar.es/blog/cual-es-el-impacto-ambiental-de-la-dieta-carnivora/
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://es.greenpeace.org/es/trabajamos-en/oceanos/pesca/" target="blank">
-                                Greenpeace. (2020). Pesca sostenible. Greenpeace España.
-                                https://es.greenpeace.org/es/trabajamos-en/oceanos/pesca/
-                            </a>
-                        </li>
-                        <li><a target="blank"
-                                href="https://www.vegaffinity.com/comunidad/alimento/quinoa-beneficios-informacion-nutricional--f213">V.
-                                (2014, 9 septiembre). Cereales. Vegaffinity.
-                                https://www.vegaffinity.com/comunidad/alimento/quinoa-beneficios-informacion-nutricional--f213</a>
-                        </li>
-                        <li>
-                            <a target="blank"
-                                href="https://www.vegaffinity.com/comunidad/articulo/sustitutos-de-la-carne-en-la-cocina-vegetariana-o-vegana--a122">V.
-                                (2016, 10 agosto). Sustitutos de la carne en la cocina vegetariana o vegana.
-                                Vegaffinity.
-                                https://www.vegaffinity.com/comunidad/articulo/sustitutos-de-la-carne-en-la-cocina-vegetariana-o-vegana--a122</a>
-                        </li>
-                        <li>
-                            <a href="https://www.vegaffinity.com/comunidad/articulo/sustitutos-vegetales-del-pescado-nutricion-recetas-y-productos--a100"
-                                target="blank">V. (2016a, junio 13). Sustitutos vegetales del pescado: Nutrición,
-                                Recetas y Productos. Vegaffinity.
-                                https://www.vegaffinity.com/comunidad/articulo/sustitutos-vegetales-del-pescado-nutricion-recetas-y-productos--a100</a>
-                        </li>
-                        <li>
-                            <a href="https://danzadefogones.com/wok-verduras-quinoa/" target="blank">I. (2017, 17
-                                junio). Wok de Verduras y Quinoa. Danza de Fogones.
-                                https://danzadefogones.com/wok-verduras-quinoa/</a>
-                        </li>
-                        <li>
-                            <a href="https://danzadefogones.com/tabule-de-quinoa/" target="blank">I. (2017a, junio 17).
-                                Tabule de Quinoa. Danza de Fogones. https://danzadefogones.com/tabule-de-quinoa/</a>
-                        </li>
-                        <li>
-                            <a href="https://danzadefogones.com/ensalada-de-quinoa/"
-                                target="blank">https://danzadefogones.com/ensalada-de-quinoa/</a>
-                        </li>
-                        <li>
-                            <a href="https://danzadefogones.com/chili-de-quinoa/" target="blank">I. (2017a, junio 17).
-                                Wok de Verduras y Quinoa. Danza de Fogones.
-                                https://danzadefogones.com/wok-verduras-quinoa/</a>
-                        </li>
-                    </ul>
-                </article>
-                <article>
-                    <h3>Referencias contenido multimedia</h3>
-                    <ul>
-                        <li><a target="blank" href="https://www.pexels.com/es-es/foto/campo-de-plantas-207247/">Pixabay.
-                                (2016, 22 noviembre). Campo de plantas [Fotografía]. pexels.
-                                https://www.pexels.com/es-es/foto/campo-de-plantas-207247/</a></li>
-                        <li><a target="blank"
-                                href="https://www.pexels.com/es-es/foto/ganado-marron-sobre-cesped-verde-durante-el-dia-162240/">Pixabay.
-                                (2017, 23 julio). Ganado marrón sobre cesped verde durante el día [Fotografía]. pexels.
-                                https://www.pexels.com/es-es/foto/ganado-marron-sobre-cesped-verde-durante-el-dia-162240/</a>
-                        </li>
-                        <li><a target="blank"
-                                href="https://www.pexels.com/es-es/foto/delfines-en-el-agua-2922672/">Jeremy Bishop.
-                                (2019, 10 septiembre). Delfines en el agua [Fotografía]. pexels.
-                                https://www.pexels.com/es-es/foto/delfines-en-el-agua-2922672/</a></li>
-                        <li><a target="blank"
-                                href="https://www.pexels.com/photo/crop-faceless-woman-planting-seedling-into-soil-4207909/">Karolina
-                                Grabowska. (2020, 20 abril). Crop faceless woman planting seedling into soil
-                                [Fotografía]. pexels.
-                                https://www.pexels.com/photo/crop-faceless-woman-planting-seedling-into-soil-4207909/</a>
-                        </li>
-                        <li><a target="blank" href="https://www.pexels.com/photo/photo-of-sea-turtle-2765872/">Jeremy
-                                Bishop. (2018, 6 enero). Photo of sea turtle [Fotografía]. pexels.
-                                https://www.pexels.com/photo/photo-of-sea-turtle-2765872/</a></li>
-                        <li><a target="blank"
-                                href="https://www.pexels.com/photo/photo-of-mother-sheep-and-their-lambs-on-a-field-2127967/">Adrian
-                                Dorobantu. (2019, 11 abril). Photo of mothe sheep and their lambs on a field
-                                [Fotografía]. pexels.
-                                https://www.pexels.com/photo/photo-of-mother-sheep-and-their-lambs-on-a-field-2127967/</a>
-                        </li>
-                    </ul>
-                </article>
-            </section>
-        </div>
+          </article>
+          <article>
+            <h3>Referencias contenido multimedia</h3>
+            <ul>
+              <li>
+                <a
+                  target="blank"
+                  href="https://www.pexels.com/es-es/foto/campo-de-plantas-207247/"
+                  >Pixabay. (2016, 22 noviembre). Campo de plantas [Fotografía].
+                  pexels.
+                  https://www.pexels.com/es-es/foto/campo-de-plantas-207247/</a
+                >
+              </li>
+              <li>
+                <a
+                  target="blank"
+                  href="https://www.pexels.com/es-es/foto/ganado-marron-sobre-cesped-verde-durante-el-dia-162240/"
+                  >Pixabay. (2017, 23 julio). Ganado marrón sobre cesped verde
+                  durante el día [Fotografía]. pexels.
+                  https://www.pexels.com/es-es/foto/ganado-marron-sobre-cesped-verde-durante-el-dia-162240/</a
+                >
+              </li>
+              <li>
+                <a
+                  target="blank"
+                  href="https://www.pexels.com/es-es/foto/delfines-en-el-agua-2922672/"
+                  >Jeremy Bishop. (2019, 10 septiembre). Delfines en el agua
+                  [Fotografía]. pexels.
+                  https://www.pexels.com/es-es/foto/delfines-en-el-agua-2922672/</a
+                >
+              </li>
+              <li>
+                <a
+                  target="blank"
+                  href="https://www.pexels.com/photo/crop-faceless-woman-planting-seedling-into-soil-4207909/"
+                  >Karolina Grabowska. (2020, 20 abril). Crop faceless woman
+                  planting seedling into soil [Fotografía]. pexels.
+                  https://www.pexels.com/photo/crop-faceless-woman-planting-seedling-into-soil-4207909/</a
+                >
+              </li>
+              <li>
+                <a
+                  target="blank"
+                  href="https://www.pexels.com/photo/photo-of-sea-turtle-2765872/"
+                  >Jeremy Bishop. (2018, 6 enero). Photo of sea turtle
+                  [Fotografía]. pexels.
+                  https://www.pexels.com/photo/photo-of-sea-turtle-2765872/</a
+                >
+              </li>
+              <li>
+                <a
+                  target="blank"
+                  href="https://www.pexels.com/photo/photo-of-mother-sheep-and-their-lambs-on-a-field-2127967/"
+                  >Adrian Dorobantu. (2019, 11 abril). Photo of mothe sheep and
+                  their lambs on a field [Fotografía]. pexels.
+                  https://www.pexels.com/photo/photo-of-mother-sheep-and-their-lambs-on-a-field-2127967/</a
+                >
+              </li>
+            </ul>
+          </article>
+        </section>
+      </div>
     </main>
 
     <footer id="footer"></footer>
@@ -145,6 +507,5 @@
       src="node_modules/@fortawesome/fontawesome-free/js/brands.min.js"
     ></script>
     <script src="index.js" async></script>
-</body>
-
+  </body>
 </html>
