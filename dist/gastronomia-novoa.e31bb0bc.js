@@ -6331,7 +6331,9 @@ window.addEventListener('load', function () {
   (0, _navbar.createNavbar)();
   checkPosition();
 
-  _aos.default.init();
+  if (window.location.pathname.includes('detail')) {
+    _aos.default.init();
+  }
 
   createPaginatorMar();
   createPaginatorTierra();

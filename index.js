@@ -95,7 +95,9 @@ window.addEventListener('load', () => {
 
   checkPosition();
 
-  AOS.init();
+  if (window.location.pathname.includes('detail')) {
+    AOS.init();
+  }
 
   createPaginatorMar();
   createPaginatorTierra();
