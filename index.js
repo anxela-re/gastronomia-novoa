@@ -94,7 +94,7 @@ window.addEventListener('load', () => {
   checkPosition();
 
   if (window.location.pathname.includes('detail')) {
-    import('./node_modules/aos')
+    import('aos')
       .then((module) => module.default)
       .then(AOS.init());
   }
@@ -103,7 +103,7 @@ window.addEventListener('load', () => {
   createPaginatorTierra();
 
   if (document.querySelector('.splide')) {
-    import('./node_modules/@splidejs/splide')
+    import('@splidejs/splide')
       .then((module) => module.default)
       .then(
         new Splide('.splide', {
