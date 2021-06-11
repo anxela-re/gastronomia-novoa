@@ -95,20 +95,19 @@ window.addEventListener('load', () => {
 
   checkPosition();
 
-  // if (window.location.pathname.includes('detail')) {
-    // import('./node_modules/aos')
-    //   .then((module) => module.default)
-    //   .then(AOS.init());
-      AOS.init();
-  // }
+  if (window.location.pathname.includes('detail')) {
+    import('./node_modules/aos')
+      .then((module) => module.default)
+      .then(AOS.init());
+  }
 
   createPaginatorMar();
   createPaginatorTierra();
 
   if (document.querySelector('.splide')) {
-    // import('./node_modules/@splidejs/splide')
-    //   .then((module) => module.default)
-    //   .then(
+    import('./node_modules/@splidejs/splide')
+      .then((module) => module.default)
+      .then(
         new Splide('.splide', {
           type: 'loop',
           perPage: Math.floor(document.querySelector('body').clientWidth / 350),
@@ -121,6 +120,6 @@ window.addEventListener('load', () => {
           },
           gap: '1rem',
         }).mount()
-  //     );
+      );
   }
 });
