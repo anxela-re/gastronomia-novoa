@@ -1,6 +1,6 @@
 import { createFooter } from './footer';
 import { createNavbar } from './navbar';
-import { AOS } from './node_modules/aos';
+import AOS from './node_modules/aos';
 import Splide from '@splidejs/splide';
 
 function checkPosition() {
